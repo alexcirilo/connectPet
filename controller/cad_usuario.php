@@ -1,31 +1,38 @@
 <?php
+session_start();
 require __DIR__ . "/../connection/conexao.php";
 
 $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
 if (isset($_POST['cadastrar'])) {
-    $sql = "INSERT INTO usuarios (login,senha) VALUES (?,?)";
 
-    $stmt = $connection->prepare($sql);
-    $stmt->bind_param(
-        "ss",
-        $dados['login'],
-        md5($dados['senha'])
-    );
+    $query = "select * from usuarios where login = '{$dados['login']}'";
 
-    $statement = $connection->prepare("select login from usuarios where login = {$dados['login']}");
+    $consulta = $connection->query($query);
+
+    if(($consulta) and $consulta->num_rows == 0){
+        $sql = "INSERT INTO usuarios (login,senha) VALUES (?,?)";
     
-    if($stmt->num_rows()>1){
-        header("Location: /connectpet/?pagina=cad_usuario");
-        $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Já possui registro com o login informado! </div>";
+        $stmt = $connection->prepare($sql);
+        $stmt->bind_param(
+            "ss",
+            $dados['login'],
+            md5($dados['senha'])
+        );
+            
+            header("Location: /connectPet/?pagina=login");
+            $_SESSION['msg'] = "<div class='alert alert-success' role='alert'>{$dados['login']}, cadastrado com Sucesso! </div>";
+            $stmt->execute();
+            $stmt->close();
+            $connection->close();
 
     }else{
-        header("Location: /connectpet/?pagina=login");
-        $_SESSION['msg'] = "<div class='alert alert-success' role='alert'>Cadastro Efetuado com Sucesso! </div>";
-        $stmt->execute();
-        $stmt->close();
-        $connection->close();
-        
+        header("Location: /connectPet/?pagina=cad_usuario");
+        $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>{$dados['login']}, Usuário já cadastrado! </div>";
     }
-    
+
+
+}else{
+    header("Location: /connectPet/?pagina=cad_usuario");
+        $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Não foi possível Cadastrar! </div>";
 }

@@ -1,6 +1,6 @@
 <?php
 $host= "localhost";
 $user = "root";
-$pwd = "Qwer@1234";
+$pwd = "";
 $database = "connect_pet";
-   $connection = new mysqli($host, $user, $pwd, $database) or die("YOU SHALL NOT PASS!!");
+	$connection = new mysqli($host,$user,$pwd,$database) or die ("YOU SHALL NOT PASS!!");

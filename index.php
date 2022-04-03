@@ -1,7 +1,8 @@
 <?php
 session_start();
 require __DIR__."/header.php";
-//include __DIR__."/connection/conexao.php";
+require __DIR__."/connection/conexao.php";
+
 
 if (isset($_GET['pagina'])) {
     $pagina = $_GET['pagina'];
@@ -36,4 +37,6 @@ switch($pagina){
 
 
 require __DIR__."/footer.php";
+
+?>
 
