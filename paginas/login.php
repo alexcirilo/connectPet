@@ -8,14 +8,14 @@
                 Senha:
                 <input type="password" class="form-control" name="senha">
             </label>
-            <input type="submit" value="Entrar" name="entrar">
+            <input class="btn btn-primary" type="submit" value="Entrar" name="entrar">
 
         </div>
-        <div class="container">
+        <div class="container" id="opcoes" >
             <label><a href="esquecisenha">Esqueci minha senha
                 </a>
             </label> |
-            <label><a href="cadastrar">Novo Cadastro</a></label>
+            <label><a href="?pagina=cad_usuario">Novo Cadastro</a></label>
         </div>
     </form>
 

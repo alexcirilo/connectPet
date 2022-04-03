@@ -1,7 +1,7 @@
 <?php
 session_start();
 require __DIR__."/header.php";
-include __DIR__."/connection/conexao.php";
+//include __DIR__."/connection/conexao.php";
 
 if (isset($_GET['pagina'])) {
     $pagina = $_GET['pagina'];
@@ -23,6 +23,9 @@ switch($pagina){
         break;
     case 'cad_tutor':
         include __DIR__."/paginas/cadastros/cad_tutor_view.php";
+        break;
+    case 'cad_usuario':
+        include __DIR__."/paginas/cadastros/cad_usuario_view.php";
         break;
     default:
         include __DIR__."/paginas/login.php";
