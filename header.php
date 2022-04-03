@@ -11,7 +11,8 @@
 </head>
 
 <body>
-    <header>
+    <header class="container-fluid header">
         <h1>ConnectPet</h1>
-        <hr />
+        
     </header>
+    <hr />
