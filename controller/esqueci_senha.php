@@ -8,7 +8,7 @@ if(isset($_POST['redefinir'])){
     $query = "select * from usuarios where login = '{$dados['login']}'";
     $consulta = $connection->query($query);
 
-    //Consulta o login, se retornar algum valor, compara. 
+    //Consulta o login, se retornar algum valor, compara 
     if(($consulta) && $consulta->num_rows == 1){
         //compara a senha e a confirmação da senha
         if($dados['senha'] === $dados['confirme_senha']){
