@@ -12,14 +12,20 @@ if(isset($_POST['redefinir'])){
     if(($consulta) && $consulta->num_rows == 1){
         //compara a senha e a confirmação da senha
         if($dados['senha'] === $dados['confirme_senha']){
-            $sql = "update usuarios set senha = ? where login = '{$dados['login']}'";
-            $stmt = $connection->prepare($sql);
-            $stmt->bind_param("s",md5($dados['senha']));
-            $stmt->execute();
-            $stmt->close();
-            $connection->close();
-            header("Location: /connectPet/?pagina=login");
-            $_SESSION['msg'] = "<div class='alert alert-success' role='alert'>Senha, alterada com Sucesso! </div>";
+            if($dados['senha'] === '' && $dados['confirme_senha'] === ''){
+                header("Location: /connectPet/?pagina=esqueci_senha");
+                $_SESSION['msg'] = "<div class='alert alert-alert' role='alert'>os campos de senha não podem estar vazios! </div>";
+            }else{
+                $sql = "update usuarios set senha = ? where login = '{$dados['login']}'";
+                $stmt = $connection->prepare($sql);
+                $stmt->bind_param("s", md5($dados['senha']));
+                $stmt->execute();
+                $stmt->close();
+                $connection->close();
+                header("Location: /connectPet/?pagina=login");
+                $_SESSION['msg'] = "<div class='alert alert-success' role='alert'>Senha, alterada com Sucesso! </div>";
+
+            }
         }else{
             $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>As senhas não coincidem</div>";
             header("location: /connectPet/?pagina=esqueci_senha");

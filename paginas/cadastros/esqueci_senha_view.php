@@ -17,8 +17,8 @@
 
     <div class="container">
         <input type="submit" class="btn btn-secondary" value="Redefinir" name="redefinir">
-        <label style="padding-top: 10px;">
-            <a href="?pagina=login">Voltar</a>
+        <label>
+            <a class="btn btn-secondary" href="?pagina=login">Voltar</a>
         </label>
     </div>
 </form>
