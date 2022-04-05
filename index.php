@@ -32,6 +32,9 @@ switch($pagina){
     case 'cad_tutor':
         include __DIR__."/paginas/cadastros/cad_tutor_view.php";
         break;
+    case 'cad_pet':
+        include __DIR__."/paginas/cadastros/cad_pet_view.php";
+        break;
     default:
         include __DIR__."/paginas/login.php";
         break;

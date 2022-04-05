@@ -6,6 +6,7 @@ if (isset($_SESSION['msg'])) {
     unset($_SESSION['msg']);
 }
 ?>
+<h1>Bem vindo ao ConnectPet</h1>
 <div class="container-fluid text-md-center" id="home">
     <section class="container">
         <div class="row">
@@ -16,7 +17,9 @@ if (isset($_SESSION['msg'])) {
                 </div>
 
                 <a href="?pagina=cad_tutor"> <input class="img-thumbnail" type="image" src="imagens/cadPacientes.png" name="cadastro_paciente" alt="Cadastro Tutor"></a>
-                <a href="?pagina=cad_pet"> <input type="image" class="img-thumbnail" width="60" height="60" src="imagens/pet.ico" name="cadastro_medico"></a>
+                <a href="?pagina=cad_pet"> <input type="image" class="img-thumbnail" width="60" height="60" src="imagens/cad_pet.ico" name="cadastro_medico"></a>
+                <i class="fa-solid fa-syringue">asdasd</i>
+                
             </div>
 
 

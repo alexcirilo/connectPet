@@ -1,27 +1,53 @@
 body{
     margin: 0px;
-    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
 }
 #login, #cad_usuario {
+ 
     border-radius: 10px ;
-    width: 500px;
     margin-left: auto;
     margin-right: auto;
     padding: 2px 2px 20px 2px;
     background-color: rgba(232, 186, 238, 0.6);
 }
+#esqueci_senha{
+    
+    border-radius: 10px ;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2px 2px 20px 2px;
+    background-color: rgba(232, 186, 238, 0.6);
+}
+
+#cad_pet{
+    border-radius: 10px ;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 10px 20px 10px;
+    
+}
+
+.tutor_pet{
+    padding: 10px;
+    border: 2px solid #000;
+    border-radius: 10px ;
+    padding-bottom: 20px;
+    background-color: rgba(113, 243, 113, 0.6);
+}
+
+.pet{
+    border: 2px solid #000;
+    border-radius: 10px ;
+    padding: 2px 2px 20px 2px;
+    background-color: rgba(113, 243, 113, 0.6);
+}
 .header{
     position: relative;
     text-align: center;
     background-color: rgb(115, 124, 133);
-}
-#esqueci_senha{
-    border-radius: 10px ;
-    width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 2px 2px 5px 8%;
-    background-color: rgba(232, 186, 238, 0.6);
 }
 .footer{
     position: relative;
@@ -29,4 +55,15 @@ body{
     align-items: center;
     background-color: rgb(115, 124, 133);
 
+}
+
+@media (max-width: 1024px){
+    .container{
+        width: 90%;
+    }
+}
+@media(max-width:650px){
+    .container{
+        width: 90%;
+    }
 }

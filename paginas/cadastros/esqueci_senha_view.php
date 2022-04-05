@@ -4,11 +4,14 @@
             Login:
             <input class="form-control" type="text" name="login" autofocus>
         </label>
-
+    </div>
+    <div class="container">
         <label>
             Senha:
             <input class="form-control" type="password" name="senha">
         </label>
+    </div>
+    <div class="container">
         <label>
             Confirme a senha:
             <input class="form-control" type="password" name="confirme_senha">

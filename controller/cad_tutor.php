@@ -7,33 +7,42 @@ $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
 //verificar se o usuario clicou no botão
 if (!empty($dados['cadastrar'])) {
-    $sql = "INSERT INTO tutor (cpf, nome, email, telefone) VALUES (?,?,?,?)";
+    $query = "select * from tutor where cpf = '{$dados['cpf']}'";
+    $consulta = $connection->query($query);
 
-    $stmt = $connection->prepare($sql);
-    $stmt->bind_param("ssss", $dados['cpf'], $dados['nome'], $dados['email'], $dados['telefone']);
-    $stmt->execute();
+    if (($consulta) && $consulta->num_rows == 0) {
+        $sql = "INSERT INTO tutor (cpf, nome, email, telefone) VALUES (?,?,?,?)";
 
-    $id_tutor = $connection->insert_id;
+        $stmt = $connection->prepare($sql);
+        $stmt->bind_param("ssss", $dados['cpf'], $dados['nome'], $dados['email'], $dados['telefone']);
+        $stmt->execute();
 
-    $query = "INSERT INTO endereco 
-    (cep, logradouro, numero, complemento, bairro, cidade, uf, tutor_id)
-    values (?,?,?,?,?,?,?,?)";
-    $stmt = $connection->prepare($query);
+        $id_tutor = $connection->insert_id;
 
-    $stmt->bind_param(
-        "sssssssi",
-        $dados['cep'],
-        $dados['logradouro'],
-        $dados['numero'],
-        $dados['complemento'],
-        $dados['bairro'],
-        $dados['cidade'],
-        $dados['uf'],
-        $id_tutor
-    );
-    $stmt->execute();
-    $stmt->close();
-    $connection->close();
+        $query = "INSERT INTO endereco (cep, logradouro, numero, complemento, bairro, cidade, uf, tutor_id) values (?,?,?,?,?,?,?,?)";
+        $stmt = $connection->prepare($query);
+
+        $stmt->bind_param(
+            "sssssssi",
+            $dados['cep'],
+            $dados['logradouro'],
+            $dados['numero'],
+            $dados['complemento'],
+            $dados['bairro'],
+            $dados['cidade'],
+            $dados['uf'],
+            $id_tutor
+        );
+        header("Location: /connectPet/?pagina=home");
+        $_SESSION['msg'] = "<div class='alert alert-success' role='alert'>{$dados['nome']}, cadastrado com Sucesso! </div>";
+        $stmt->execute();
+        $stmt->close();
+        $connection->close();
+    }else{
+        header("Location: /connectPet/?pagina=cad_tutor");
+        $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Já existe um cadastro com o CPF informado! </div>";
+    }
 } else {
-    echo "Erro";
+    header("Location: /connectPet/?pagina=cad_tutor");
+    $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Não foi possível cadastrar! </div>";
 }

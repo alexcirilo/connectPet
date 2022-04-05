@@ -16,7 +16,7 @@ if (isset($_POST['cadastrar'])) {
         $stmt = $connection->prepare($sql);
         $stmt->bind_param(
             "ss",
-            $dados['login'],
+            strtolower($dados['login']),
             md5($dados['senha'])
         );
             

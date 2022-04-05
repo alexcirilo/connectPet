@@ -5,13 +5,13 @@
             <label>
                 Nome:
             </label>
-            <input type="text"  name="nome" class="form-control col-md-8">
+            <input type="text" name="nome" class="form-control col-md-8">
         </div>
         <div class="form-group">
             <div>
                 <label>
                     CPF:
-                    <input type="text"  name="cpf" class="form-control" placeholder="xxx.xxx.xxx-xx">
+                    <input type="text" name="cpf" class="form-control" placeholder="xxx.xxx.xxx-xx">
                 </label>
                 <label>
                     E-mail:
@@ -27,17 +27,17 @@
         <div class="form-group">
             <label>
                 CEP:
-                <input type="text"  name="cep" class="form-control col-md">
+                <input type="text" name="cep" class="form-control col-md">
             </label>
         </div>
         <div class="form-group">
             <label>
                 Logradouro:
-                <input type="text"  name="logradouro" class="form-control">
+                <input type="text" name="logradouro" class="form-control">
             </label>
             <label>
                 Número:
-                <input type="text"  name="numero" class="form-control col-md-4">
+                <input type="text" name="numero" class="form-control col-md-4">
             </label>
         </div>
         <div class="form-group">
@@ -62,8 +62,9 @@
             </div>
         </div>
         <br>
-        <div>
-            <input type="submit" class="btn btn-success" value="Cadastrar" name="cadastrar">
-        </div>
+    </div>
+    <div>
+        <input type="submit" class="btn btn-success" value="Cadastrar" name="cadastrar">
+    </div>
 
 </form>

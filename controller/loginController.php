@@ -16,7 +16,7 @@ if (isset($entrar)) {
     if (empty($login) || (empty($senha))) {
         header("Location: /connectPet/?pagina=login");
         $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Preencher todos os campos! </div>";
-    } elseif ($login == $linha['login'] && $senha == $linha['senha']) {
+    } elseif (strtolower($login) == $linha['login'] && $senha == $linha['senha']) {
         header("Location: /connectPet/?pagina=home");
         $_SESSION['msg'] = "<div class='alert alert-success' role='alert'>Login Efetuado com Sucesso! </div>";
     } else {
