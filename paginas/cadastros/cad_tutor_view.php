@@ -1,5 +1,5 @@
 <h2>Cadastro de Tutor</h2>
-<form action="/connectpet/controller/cad_tutor.php" method="post" id="cad_tutor">
+<form action="controller/cad_tutor.php" method="post" id="cad_tutor">
     <div class="container" style="border: 1px solid">
         <div class="form-group">
             <label>
