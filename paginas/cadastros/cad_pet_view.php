@@ -31,7 +31,7 @@ if (isset($_POST['pesquisar'])) {
     </div>
 </form>
 
-<form action="/connectPet/controller/cad_pet.php" method="post" id="cad_pet">
+<form action="controller/cad_pet.php" method="post" id="cad_pet">
 
     <hr />
     <div class="container pet">
