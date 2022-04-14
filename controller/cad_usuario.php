@@ -20,19 +20,19 @@ if (isset($_POST['cadastrar'])) {
             md5($dados['senha'])
         );
             
-            header("Location: /connectPet/?pagina=login");
+            header("Location: /?pagina=login");
             $_SESSION['msg'] = "<div class='alert alert-success' role='alert'>{$dados['login']}, cadastrado com Sucesso! </div>";
             $stmt->execute();
             $stmt->close();
             $connection->close();
 
     }else{
-        header("Location: /connectPet/?pagina=cad_usuario");
+        header("Location: /?pagina=cad_usuario");
         $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>{$dados['login']}, Usuário já cadastrado! </div>";
     }
 
 
 }else{
-    header("Location: /connectPet/?pagina=cad_usuario");
+    header("Location: /?pagina=cad_usuario");
         $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Não foi possível Cadastrar! </div>";
 }

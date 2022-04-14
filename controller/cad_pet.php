@@ -33,10 +33,10 @@ if (isset($_POST['cadastrar'])) {
     $stmt->close();
     $connection->close();
 
-    header("Location: /connectPet/?pagina=home");
+    header("Location: /?pagina=home");
     $_SESSION['msg'] = "<div class='alert alert-success' role='alert'>{$dados['nome_pet']}, cadastrado com Sucesso! </div>";
     */
 }else{
-    header("Location: /connectPet/?pagina=cad_pet");
+    header("Location: /?pagina=cad_pet");
     $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Não foi possível cadastrar o Pet </div>";
 }

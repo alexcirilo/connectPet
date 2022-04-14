@@ -13,7 +13,7 @@ if(isset($_POST['redefinir'])){
         //compara a senha e a confirmação da senha
         if($dados['senha'] === $dados['confirme_senha']){
             if($dados['senha'] === '' && $dados['confirme_senha'] === ''){
-                header("Location: /connectPet/?pagina=esqueci_senha");
+                header("Location: /?pagina=esqueci_senha");
                 $_SESSION['msg'] = "<div class='alert alert-alert' role='alert'>os campos de senha não podem estar vazios! </div>";
             }else{
                 $sql = "update usuarios set senha = ? where login = '{$dados['login']}'";
@@ -22,19 +22,19 @@ if(isset($_POST['redefinir'])){
                 $stmt->execute();
                 $stmt->close();
                 $connection->close();
-                header("Location: /connectPet/?pagina=login");
+                header("Location: /?pagina=login");
                 $_SESSION['msg'] = "<div class='alert alert-success' role='alert'>Senha, alterada com Sucesso! </div>";
 
             }
         }else{
             $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>As senhas não coincidem</div>";
-            header("location: /connectPet/?pagina=esqueci_senha");
+            header("location: /?pagina=esqueci_senha");
         }
     }else{
         $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Usuário não encontrado!</div>";
-        header("location: /connectPet/?pagina=esqueci_senha");
+        header("location: /?pagina=esqueci_senha");
     }
 }else{
-    header("Location: /connectPet/?pagina/esqueci_senha");
+    header("Location: /?pagina/esqueci_senha");
     $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>As senhas não coincidem</div>";
 }
