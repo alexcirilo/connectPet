@@ -14,17 +14,17 @@ if (isset($entrar)) {
     ($linha = mysqli_fetch_array($consulta));
 
     if (empty($login) || (empty($senha))) {
-        header("Location: /connectPet/?pagina=login");
+        header("Location: /?pagina=login");
         $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Preencher todos os campos! </div>";
     } elseif (strtolower($login) == $linha['login'] && $senha == $linha['senha']) {
-        header("Location: /connectPet/?pagina=home");
+        header("Location: /?pagina=home");
         $_SESSION['msg'] = "<div class='alert alert-success' role='alert'>Login Efetuado com Sucesso! </div>";
     } else {
-        header("Location: /connectPet/?pagina=login");
+        header("Location: /?pagina=login");
         $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Login ou senha Incorretos! </div>";
     }
 
 } else {
-    header("Location: /connectPet/?pagina=login");
+    header("Location: /?pagina=login");
     $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>NOT PASS! </div>";
 }
