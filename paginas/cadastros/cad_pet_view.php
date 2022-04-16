@@ -7,7 +7,7 @@ verifica_login();
 <h1>Cadastro de Pet</h1>
 
 
-<form action="/connectPet/controller/cad_pet.php" method="post" id="cad_pet">
+<form action="controller/cad_pet.php" method="post" id="cad_pet">
     <div class="tutor_pet">
         <div class="form-group">
             <label>CPF:</label>

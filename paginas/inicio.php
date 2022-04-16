@@ -6,7 +6,7 @@ if (isset($_SESSION['msg'])) {
     unset($_SESSION['msg']);
 }
 ?>
-<h1>Bem vindo ao ConnectPet</h1>
+<h1>Olá <?=$_SESSION['login'] ?>, Bem vindo ao ConnectPet</h1>
 <div class="container-fluid text-md-center" id="home">
     <section class="container">
         <div class="row">
