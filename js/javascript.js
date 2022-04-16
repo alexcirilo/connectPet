@@ -7,6 +7,7 @@ $(function () {
 		$.post('/connectpet/controller/busca_usuario.php', {busca: busca}, function (data) {
 			$("#tutor").html(data);
 		});
+		
 	});
 });
 
