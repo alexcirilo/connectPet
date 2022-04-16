@@ -16,7 +16,7 @@
 
 <body>
     <header class="container-fluid header">
-        <h1>ConnectPet</h1>
+        <h1><a href="?pagina=home">ConnectPet</a></h1>
         
     </header>
     <hr />
