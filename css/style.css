@@ -47,13 +47,14 @@ body{
 .header{
     position: relative;
     text-align: center;
-    background-color: rgb(115, 124, 133);
 }
 .footer{
-    position: relative;
-    width: 50%;
     align-items: center;
-    background-color: rgb(115, 124, 133);
+    position: relative;
+    width: 100%;
+    text-align: center;
+    color: aliceblue;
+    padding: 10px;
 
 }
 
@@ -66,4 +67,7 @@ body{
     .container{
         width: 90%;
     }
+}
+li{
+    list-style: none;
 }

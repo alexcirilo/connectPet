@@ -2,7 +2,7 @@
     <div class="container">
         <label>
             Login:
-            <input type="text" class="form-control" name="login">
+            <input type="text" autofocus class="form-control" name="login">
         </label>
         <label>
             Senha:

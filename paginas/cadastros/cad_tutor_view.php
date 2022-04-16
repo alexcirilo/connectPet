@@ -5,7 +5,7 @@
             <label>
                 Nome:
             </label>
-            <input type="text" name="nome" class="form-control col-md-8">
+            <input type="text" autofocus name="nome" class="form-control col-md-8">
         </div>
         <div class="form-group">
             <div>
