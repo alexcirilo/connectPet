@@ -1,3 +1,8 @@
+<?php
+include __DIR__."/../../functions/verifica_login.php";
+
+verifica_login();
+?>
 <h2>Cadastro de Tutor</h2>
 <form action="controller/cad_tutor.php" method="post" id="cad_tutor">
     <div class="container" style="border: 1px solid">
