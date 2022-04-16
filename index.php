@@ -28,7 +28,6 @@ switch ($pagina) {
     case 'cad_usuario_logado':
         include __DIR__ . "/paginas/cadastros/cad_usuario_view.php";
     case 'esqueci_senha':
-        break;
         include __DIR__ . "/paginas/cadastros/esqueci_senha_view.php";
         break;
     case 'home':
