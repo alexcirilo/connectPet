@@ -17,7 +17,7 @@
         </div>
 
         <div class="col-4">
-            <p>Aba</p>
+            
         </div>
 
         <div class="container col-4 text-md-center">
