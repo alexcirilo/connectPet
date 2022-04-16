@@ -4,7 +4,7 @@ $(function () {
 
 		var busca = $("#cpf").val();
 
-		$.post('/connectpet/controller/busca_usuario.php', {busca: busca}, function (data) {
+		$.post('controller/busca_usuario.php', {busca: busca}, function (data) {
 			$("#tutor").html(data);
 		});
 		

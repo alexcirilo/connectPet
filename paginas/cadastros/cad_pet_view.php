@@ -7,9 +7,8 @@ require __DIR__ . "/../../connection/conexao.php";
 <form action="controller/cad_pet.php" method="post" id="cad_pet">
     <div class="tutor_pet">
         <div class="form-group">
-            <label>CPF:
-                <input class="form-control" type="text" name="cpf" id="cpf">
-            </label>
+            <label>CPF:</label>
+            <input class="form-control" type="text" name="cpf" id="cpf">
         </div>
         <div>
             <label>Tutor:</label>
