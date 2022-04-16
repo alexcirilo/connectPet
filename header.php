@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -35,7 +36,7 @@
             $pagina = 'login';
         }
 
-        if ($pagina !== 'login') {
+        if ($pagina !== 'login' && $pagina !== 'esqueci_senha' && $pagina !== 'cad_usuario') {
         ?>
             <nav class=" navbar navbar-expand-lg navbar-dark bg-dark">
                 <a class="nav-link mx-auto" href="?pagina=home"><img src="imagens/pet.ico" width="60px" height="60px"></a>
@@ -50,27 +51,26 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cadastro</a>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="?pagina=cadastro_paciente">Paciente</a>
-                                    <a class="dropdown-item" href="?pagina=cadastro_medico">Médico</a>
-                                    <a class="dropdown-item" href="?pagina=cadastro_usuario">Usuário</a>
+                                    <a class="dropdown-item" href="?pagina=cad_tutor">Tutor</a>
+                                    <a class="dropdown-item" href="?pagina=cad_pet">Pet</a>
+                                    <a class="dropdown-item" href="?pagina=cad_usuario">Usuário</a>
+                                    <a class="dropdown-item" href="?pagina=cad_vacinacao">Vacinação</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Consulta</a>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="?pagina=agendamento_consulta">Agendamentos de Consulta</a>
-                                    <a class="dropdown-item" href="?pagina=pesquisa_consulta">Pesquisar Consultas</a>
-                                    <a class="dropdown-item" href="?pagina=paciente">Consulta Paciente</a>
-                                    <a class="dropdown-item" href="?pagina=medico">Consulta Médico</a>
+                                    <a class="dropdown-item" href="?pagina=consulta_vacinacao">Pesquisar Vacinação</a>
+                                    <a class="dropdown-item" href="?pagina=consulta_tutor">Consulta Tutor</a>
+                                    <a class="dropdown-item" href="?pagina=consulta_pet">Consulta Pet</a>
                                 </div>
                             </li>
                         </ul>
                     </div>
                 </div>
+                <p id="p" style="color:white">usuario: <?=$_SESSION['login'] ?> | <a href="controller/sair.php"> Sair</a></p>
             </nav>
-
         <?php
-        } else {
         }
         ?>
     </header>

@@ -1,8 +1,10 @@
 <?php
 session_start();
+ob_start(); 
 
 require __DIR__."/header.php";
 require __DIR__."/connection/conexao.php";
+
 
 
 if (isset($_GET['pagina'])) {
@@ -39,9 +41,6 @@ switch($pagina){
         include __DIR__."/paginas/login.php";
         break;
 }
-
-
-
 
 require __DIR__."/footer.php";
 

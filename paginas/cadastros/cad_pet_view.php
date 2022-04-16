@@ -1,8 +1,9 @@
 <?php
 require __DIR__ . "/../../connection/conexao.php";
+include __DIR__."/../../functions/verifica_login.php";
 
+verifica_login();
 ?>
-
 <h1>Cadastro de Pet</h1>
 
 
