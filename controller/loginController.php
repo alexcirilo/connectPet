@@ -18,7 +18,10 @@ if (isset($entrar)) {
         $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Preencher todos os campos! </div>";
     } elseif (strtolower($login) == $linha['login'] && $senha == $linha['senha']) {
         header("Location: /?pagina=home");
+        $_SESSION['login'] = $login;
+
         $_SESSION['msg'] = "<div class='alert alert-success' role='alert'>Login Efetuado com Sucesso! </div>";
+        exit();
     } else {
         header("Location: /?pagina=login");
         $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Login ou senha Incorretos! </div>";
