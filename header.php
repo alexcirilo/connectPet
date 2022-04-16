@@ -27,7 +27,7 @@
 </head>
 
 <body>
-    <header class="container-fluid header">
+    <header class="container-fluid header bg-dark">
         <?php
         if (isset($_GET['pagina'])) {
             $pagina = $_GET['pagina'];
