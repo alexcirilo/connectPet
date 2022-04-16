@@ -33,16 +33,16 @@ if (!empty($dados['cadastrar'])) {
             $dados['uf'],
             $id_tutor
         );
-        header("Location: /?pagina=home");
+        header("Location:/connectpet/?pagina=home");
         $_SESSION['msg'] = "<div class='alert alert-success' role='alert'>{$dados['nome']}, cadastrado com Sucesso! </div>";
         $stmt->execute();
         $stmt->close();
         $connection->close();
     }else{
-        header("Location: /?pagina=cad_tutor");
+        header("Location: /connectpet/?pagina=cad_tutor");
         $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Já existe um cadastro com o CPF informado! </div>";
     }
 } else {
-    header("Location: /?pagina=cad_tutor");
+    header("Location: /connectpet/?pagina=cad_tutor");
     $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Não foi possível cadastrar! </div>";
 }
