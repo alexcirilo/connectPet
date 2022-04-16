@@ -1,38 +1,23 @@
 <?php
 require __DIR__ . "/../../connection/conexao.php";
-
-
-
-if (isset($_POST['pesquisar'])) {
-
-    $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-    $query = "SELECT id_tutor, cpf, nome from tutor where cpf = '{$dados['cpf']}'";
-
-    $resultado = $connection->query($query);
-    $dado = mysqli_fetch_array($resultado);
-}
-
-
 ?>
 
 <h1>Cadastro de Pet</h1>
-<form action="#" method="post">
-    <div class="tutor_pet">
-        <div class="form-group">
-            <input type="hidden" name="id_tutor" value="<?= isset($dado['id_tutor']) ? $dado['id_tutor'] : '' ?>">
-            <label>CPF:
-                <input class="form-control" type="text" name="cpf" value="<?= isset($dado['cpf']) ? $dado['cpf'] : '' ?>">
-            </label>
-            <input class="btn btn-primary" type="submit" value="Pesquisar" name="pesquisar">
-            <a class="btn btn-primary" href="?pagina=cad_tutor">Novo Tutor</a>
-        </div>
-        <label>Tutor:</label>
-        <input class="form-control" type="text" name="tutor" value="<?= isset($dado['nome']) ? $dado['nome'] : '' ?>">
-    </div>
-</form>
 
 <form action="controller/cad_pet.php" method="post" id="cad_pet">
-
+    <div class="tutor_pet">
+        <div class="form-group">
+            <label>CPF:
+                <input class="form-control" type="text" name="cpf" id="cpf">
+            </label>
+        </div>
+        <div>
+            <label>Tutor:</label>
+            <label id="tutor"> </label>
+        </div>
+        <br />
+        <a class="btn btn-primary" href="?pagina=cad_tutor">Novo Tutor</a>
+    </div>
     <hr />
     <div class="container pet">
         <label>
@@ -45,7 +30,7 @@ if (isset($_POST['pesquisar'])) {
                 <label>Espécie:</label>
                 <select class="custom-select mr-sm-2" name="especie">
                     <option value="">Selecione</option>
-                    <option value="cão">Cão</option>
+                    <option value="cao">Cão</option>
                     <option value="gato">Gato</option>
                 </select>
             </div>
@@ -63,8 +48,8 @@ if (isset($_POST['pesquisar'])) {
                 <label>Raça:</label>
                 <select class="custom-select mr-sm-2" name="raca">
                     <option value="">Selecione</option>
-                    <option value="cão">Raça</option>
-                    <option value="gato">Vira Lata</option>
+                    <option value="raca">Raça</option>
+                    <option value="vira_lata">Vira Lata</option>
                 </select>
             </div>
             <div class="col-auto-my-1">
