@@ -53,7 +53,7 @@
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="?pagina=cad_tutor">Tutor</a>
                                     <a class="dropdown-item" href="?pagina=cad_pet">Pet</a>
-                                    <a class="dropdown-item" href="?pagina=cad_usuario">Usuário</a>
+                                    <a class="dropdown-item" href="?pagina=cad_usuario_logado">Usuário</a>
                                     <a class="dropdown-item" href="?pagina=cad_vacinacao">Vacinação</a>
                                 </div>
                             </li>

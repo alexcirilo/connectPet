@@ -25,6 +25,9 @@ switch($pagina){
     case 'cad_usuario':
         include __DIR__."/paginas/cadastros/cad_usuario_view.php";
         break;
+    case 'cad_usuario_logado':
+        include __DIR__."/paginas/cadastros/cad_usuario_view.php";
+        break;
     case 'esqueci_senha':
         include __DIR__."/paginas/cadastros/esqueci_senha_view.php";
         break;
