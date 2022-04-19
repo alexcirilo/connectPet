@@ -74,7 +74,7 @@ function pesquisacep(valor) {
 			//Sincroniza com o callback.
 			script.src = 'https://viacep.com.br/ws/' + cep + '/json/?callback=meu_callback';
 
-			//Insere script no documento e carrega o conteúdo.
+			//Insere script no documento e carrega o conteúdo
 			document.body.appendChild(script);
 
 		} //end if.
