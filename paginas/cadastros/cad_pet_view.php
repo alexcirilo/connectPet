@@ -15,7 +15,7 @@ verifica_login();
         </div>
         <div>
             <label>Tutor:</label>
-            <label id="tutor"> </label>
+            <input type="text" class="form-control" name="tutor" id="tutor" > 
         </div>
         <br />
         <a class="btn btn-primary" href="?pagina=cad_tutor">Novo Tutor</a>
