@@ -1,5 +1,5 @@
 <?php
-include __DIR__."/../../functions/verifica_login.php";
+include __DIR__ . "/../../functions/verifica_login.php";
 
 verifica_login();
 ?>
@@ -32,13 +32,13 @@ verifica_login();
         <div class="form-group">
             <label>
                 CEP:
-                <input type="text" name="cep" class="form-control col-md">
+                <input name="cep" type="text" id="cep" value="" size="10" maxlength="9" class="form-control" onblur="pesquisacep(this.value);" /></label>
             </label>
         </div>
         <div class="form-group">
             <label>
                 Logradouro:
-                <input type="text" name="logradouro" class="form-control">
+                <input name="rua" type="text" id="rua" size="60" class="form-control" />
             </label>
             <label>
                 Número:
@@ -51,21 +51,14 @@ verifica_login();
         </div>
         <div class="form-group">
             <label>Bairro:</label>
-            <input type="text" name="bairro" class="form-control col-md-6">
+            <input name="bairro" type="text" id="bairro" size="40" class="form-control" />
         </div>
         <div class="form-group">
             <label>Cidade:</label>
-            <input type="text" name="cidade" class="form-control col-md-5">
+            <input name="cidade" type="text" id="cidade" size="40" class="form-control" />
         </div>
-        <div class="form-row align-itens-center">
-            <div class="col-auto-my-1">
-                <label>UF:</label>
-                <select class="custom-select mr-sm-2" name="uf">
-                    <option value="">Selecione</option>
-                    <option value="1">PA</option>
-                </select>
-            </div>
-        </div>
+        <label>UF:</label>
+        <input name="uf" type="text" id="uf" class="form-control col-md-2" size="2" />
         <br>
     </div>
     <div>
