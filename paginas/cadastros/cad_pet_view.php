@@ -12,7 +12,7 @@ verifica_login();
         <div class="container">
             <div class="form-group">
                 <label>CPF:</label>
-                <input class="form-control" autofocus type="text" name="cpf" id="cpf">
+                <input class="form-control" autofocus type="text" name="cpf" id="cpf" required>
             </div>
             <div>
                 <label>Tutor:</label>
@@ -30,12 +30,12 @@ verifica_login();
                 <label>
                     Nome:
                 </label>
-                <input class="form-control col-md-12" type="text" name="nome_pet">
+                <input class="form-control col-md-12" type="text" name="nome_pet" required>
 
                 <div class="form-row align-itens-center">
                     <div class="col-auto-my-1">
                         <label>Espécie:</label>
-                        <select class="custom-select mr-sm-2" name="especie">
+                        <select class="custom-select mr-sm-2" name="especie" required>
                             <option value="">Selecione</option>
                             <option value="cao">Cão</option>
                             <option value="gato">Gato</option>
@@ -43,7 +43,7 @@ verifica_login();
                     </div>
                     <div class="col-auto-my-1">
                         <label>Sexo:</label>
-                        <select class="custom-select mr-sm-1" name="sexo">
+                        <select class="custom-select mr-sm-1" name="sexo" required>
                             <option value="">Selecione</option>
                             <option value="M">Macho</option>
                             <option value="F">Fêmea</option>
@@ -53,7 +53,7 @@ verifica_login();
                 <div class="form-row align-itens-center">
                     <div class="col-auto-my-2">
                         <label>Raça:</label>
-                        <select class="custom-select mr-sm-2" name="raca">
+                        <select class="custom-select mr-sm-2" name="raca" required>
                             <option value="">Selecione</option>
                             <option value="raca">Raça</option>
                             <option value="vira_lata">Vira Lata</option>
@@ -61,7 +61,7 @@ verifica_login();
                     </div>
                     <div class="col-auto-my-1">
                         <label>Castrado:</label>
-                        <select class="custom-select mr-sm-1" name="castrado">
+                        <select class="custom-select mr-sm-1" name="castrado" required>
                             <option value="">Selecione</option>
                             <option value="s">Sim</option>
                             <option value="n">Não</option>
@@ -69,14 +69,14 @@ verifica_login();
                     </div>
                 </div>
                 <label>Data de Nascimento: </label>
-                <input class="form-control col" type="date" name="data_nascimento">
+                <input class="form-control col" type="date" name="data_nascimento" required>
                 <br>
 
             </div>
             <div class="container col-md-4">
                 <div>
                     <label>Pelagem:</label>
-                    <input type="text" class="form-control" name="pelagem" id="pelagem">
+                    <input type="text" class="form-control" name="pelagem" id="pelagem" required>
                 </div>
                 <div class="col-auto-my-1">
                     <label>MicroChip:</label>

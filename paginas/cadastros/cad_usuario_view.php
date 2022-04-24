@@ -26,7 +26,7 @@ require __DIR__ . "/../../functions/busca_funcao.php";
             <div class="container">
                 <label>
                     Senha:
-                    <input class="form-control" type="password" name="senha">
+                    <input class="form-control" type="password" name="senha" required>
                 </label>
             </div>
 
@@ -49,7 +49,7 @@ require __DIR__ . "/../../functions/busca_funcao.php";
                 <div class="form-row align-itens-center">
                     <div class="col-auto-my-2">
                         <label>Função:</label>
-                        <select class="custom-select mr-sm-2" name="funcao">
+                        <select class="custom-select mr-sm-2" name="funcao" required>
                             <?php while ($linha = $consulta->fetch_assoc()) { ?>
                                 <option value="">Selecione</option>
                                 <option value="<?= $linha['id_funcao'] ?>"><?= $linha['descricao'] ?></option>
@@ -60,7 +60,7 @@ require __DIR__ . "/../../functions/busca_funcao.php";
                 <div class="form-row align-itens-center">
                     <div class="col-auto-my-2">
                         <label>Perfil:</label>
-                        <select class="custom-select mr-sm-2" name="perfil">
+                        <select class="custom-select mr-sm-2" name="perfil" required>
                             <option value="">Selecione</option>
                             <option value="1">Administrador</option>
                             <option value="2">Vacinador</option>
@@ -74,7 +74,7 @@ require __DIR__ . "/../../functions/busca_funcao.php";
     <div class="container">
         <label>
             E-mail:
-            <input class="form-control" type="email" name="email">
+            <input class="form-control" type="email" name="email" required>
         </label>
     </div>
     <div class="container">
