@@ -14,7 +14,7 @@ function previewImagem(){
 	}
 }
 $(function () {
-	//Pesquisar os cursos sem refresh na página
+	//Pesquisar os cursos sem refresh na página.
 	$("#cpf").keyup(function () {
 
 		var busca = $("#cpf").val();
