@@ -1,3 +1,18 @@
+function previewImagem(){
+	var imagem = document.querySelector('input[name=arquivo]').files[0];
+	var preview = document.querySelector('img[id=img]');
+
+	var reader = new FileReader();
+
+	reader.onloadend = function () {
+		preview.src = reader.result;
+	}
+	if(imagem){
+		reader.readAsDataURL(imagem);
+	}else{
+		preview.src = "";
+	}
+}
 $(function () {
 	//Pesquisar os cursos sem refresh na página
 	$("#cpf").keyup(function () {
@@ -85,7 +100,7 @@ function pesquisacep(valor) {
 		}
 	} //end if.
 	else {
-		//cep sem valor, limpa formulário.
+		//cep sem valor, limpa formulário
 		limpa_formulário_cep();
 	}
 };
