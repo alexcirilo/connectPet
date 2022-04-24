@@ -1,3 +1,4 @@
+/* Preview da foto no cad_pet */
 function previewImagem(){
 	var imagem = document.querySelector('input[name=arquivo]').files[0];
 	var preview = document.querySelector('img[id=img]');
