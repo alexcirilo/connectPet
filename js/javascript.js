@@ -21,7 +21,8 @@ $(function () {
 		var busca = $("#cpf").val();
 
 		$.post('controller/busca_usuario.php', { busca: busca }, function (data) {
-			$("#tutor").html(data);
+			//$("#tutor").html(data);
+			document.getElementById('tutor').value = (data)
 		});
 
 	});
@@ -93,6 +94,22 @@ function pesquisacep(valor) {
 		limpa_formulário_cep();
 	}
 };
+
+$(document).ready(function(){
+	$("#cpf").mask("000.000.000-00");
+	$("#telefone").mask("(99)99999-9999");
+	$("#cep").mask("00000-000");
+});
+
+function oculta_campo(val){
+	var microchip = document.getElementById("microchip");
+	var imp = document.getElementById('local_implantacao');
+	if(val.value == 'n'){
+		$(imp).hide();
+	}else{
+		$(imp).show();
+	}
+}
 
 
 
