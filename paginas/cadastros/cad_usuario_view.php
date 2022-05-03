@@ -78,6 +78,6 @@ require __DIR__ . "/../../functions/busca_funcao.php";
     </div>
     <div class="container">
         <input class="btn btn-success" type="submit" value="Cadastrar" name="cadastrar">
-        <a href="/connectpet/?pagina=login" class="btn btn-secondary">Voltar</a>
+        <a href="/?pagina=login" class="btn btn-secondary">Voltar</a>
     </div>
 </form>
