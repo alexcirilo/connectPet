@@ -1,8 +1,5 @@
 <?php
 require __DIR__ . "/../../functions/busca_funcao.php";
-include __DIR__ . "/../../functions/verifica_login.php";
-
-verifica_login();
 ?>
 <form action="/connectpet/controller/cad_usuario.php" method="post" id="cad_usuario">
     <div class="row">
