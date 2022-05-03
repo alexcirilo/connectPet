@@ -24,12 +24,12 @@ if ($_POST['cadastrar']) {
     );
 
     
-    header("Location: /connectpet/?pagina=consulta_vacina");
+    header("Location: /?pagina=consulta_vacina");
     $_SESSION['msg'] = "<div class='alert alert-success' role='alert'>{$dados['descricao']}, cadastrada com Sucesso! </div>";
     $stmt->execute();
     $stmt->close();
     $connection->close();
 } else {
-    header("Location: /connectpet/?pagina=cad_vacinacao");
+    header("Location: /?pagina=cad_vacinacao");
     $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'> Não foi possível cadastrar! </div>";
 }
