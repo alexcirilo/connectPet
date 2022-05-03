@@ -1,8 +1,10 @@
 <?php
 require __DIR__ . "/../../functions/busca_funcao.php";
+include __DIR__ . "/../../functions/verifica_login.php";
 
+verifica_login();
 ?>
-<form action="controller/cad_usuario.php" method="post" id="cad_usuario">
+<form action="/connectpet/controller/cad_usuario.php" method="post" id="cad_usuario">
     <div class="row">
         <div class="col-6">
             <div class="container">
@@ -26,7 +28,7 @@ require __DIR__ . "/../../functions/busca_funcao.php";
             <div class="container">
                 <label>
                     Senha:
-                    <input class="form-control" type="password" name="senha" required>
+                    <input class="form-control" type="password" name="senha">
                 </label>
             </div>
 
@@ -49,7 +51,7 @@ require __DIR__ . "/../../functions/busca_funcao.php";
                 <div class="form-row align-itens-center">
                     <div class="col-auto-my-2">
                         <label>Função:</label>
-                        <select class="custom-select mr-sm-2" name="funcao" required>
+                        <select class="custom-select mr-sm-2" name="funcao">
                             <?php while ($linha = $consulta->fetch_assoc()) { ?>
                                 <option value="">Selecione</option>
                                 <option value="<?= $linha['id_funcao'] ?>"><?= $linha['descricao'] ?></option>
@@ -60,7 +62,7 @@ require __DIR__ . "/../../functions/busca_funcao.php";
                 <div class="form-row align-itens-center">
                     <div class="col-auto-my-2">
                         <label>Perfil:</label>
-                        <select class="custom-select mr-sm-2" name="perfil" required>
+                        <select class="custom-select mr-sm-2" name="perfil">
                             <option value="">Selecione</option>
                             <option value="1">Administrador</option>
                             <option value="2">Vacinador</option>
@@ -74,11 +76,11 @@ require __DIR__ . "/../../functions/busca_funcao.php";
     <div class="container">
         <label>
             E-mail:
-            <input class="form-control" type="email" name="email" required>
+            <input class="form-control" type="email" name="email">
         </label>
     </div>
     <div class="container">
         <input class="btn btn-success" type="submit" value="Cadastrar" name="cadastrar">
-        <a href="/?pagina=login" class="btn btn-secondary">Voltar</a>
+        <a href="/connectpet/?pagina=login" class="btn btn-secondary">Voltar</a>
     </div>
 </form>

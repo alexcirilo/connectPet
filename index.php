@@ -43,14 +43,23 @@ switch ($pagina) {
     case 'cad_vacinacao':
         include __DIR__ . "/paginas/cadastros/cad_vacinacao_view.php";
         break;
+    case 'cad_vacina':
+        include __DIR__ . "/paginas/cadastros/cad_vacina_view.php";
+        break;
     case 'consulta_tutor':
-        include __DIR__ . "/paginas/cadastros/consulta_tutor_view.php";
+        include __DIR__ . "/paginas/consultas/consulta_tutor_view.php";
         break;
     case 'consulta_pet':
-        include __DIR__ . "/paginas/cadastros/consulta_pet_view.php";
+        include __DIR__ . "/paginas/consultas/consulta_pet_view.php";
         break;
     case 'consulta_vacinacao':
-        include __DIR__ . "/paginas/cadastros/consulta_vacinacao_view.php";
+        include __DIR__ . "/paginas/consultas/consulta_vacinacao_view.php";
+        break;
+    case 'edit_vacina':
+        include __DIR__. "/paginas/edit/edit_vacina_view.php";
+        break;
+    case 'consulta_vacina':
+        include __DIR__. "/paginas/consultas/consulta_vacina_view.php";
         break;
     default:
         include __DIR__ . "/paginas/login.php";

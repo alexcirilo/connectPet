@@ -14,7 +14,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
     <script type="text/javascript" src="js/javascript.js"></script>
     <script type="text/javascript" src="js/jquery.mask.min.js"></script>
     <title>ConnectPet</title>
@@ -47,6 +50,7 @@
                                     <a class="dropdown-item" href="?pagina=cad_tutor">Tutor</a>
                                     <a class="dropdown-item" href="?pagina=cad_pet">Pet</a>
                                     <a class="dropdown-item" href="?pagina=cad_usuario_logado">Usuário</a>
+                                    <a class="dropdown-item" href="?pagina=cad_vacina">Vacina</a>
                                     <a class="dropdown-item" href="?pagina=cad_vacinacao">Vacinação</a>
                                 </div>
                             </li>
@@ -56,6 +60,7 @@
                                     <a class="dropdown-item" href="?pagina=consulta_vacinacao">Consulta Vacinação</a>
                                     <a class="dropdown-item" href="?pagina=consulta_tutor">Consulta Tutor</a>
                                     <a class="dropdown-item" href="?pagina=consulta_pet">Consulta Pet</a>
+                                    <a class="dropdown-item" href="?pagina=consulta_vacina">Consulta Vacina</a>
                                 </div>
                             </li>
                         </ul>

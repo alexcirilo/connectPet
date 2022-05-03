@@ -1,3 +1,8 @@
+<?php
+include __DIR__ . "/../../functions/verifica_login.php";
+
+verifica_login();
+?>
 <form action="controller/cad_usuario_logado.php" method="post" id="cad_usuario_logado">
     <div class="container">
         <label>
