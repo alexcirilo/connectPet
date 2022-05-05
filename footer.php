@@ -19,7 +19,7 @@
         </div>
     </div>
     <div>
-        <span>© 2022 ConnectPet - Todos os Direitos Reservados </span>
+        <span>© 2022 ConnectPet - Todos os Direitos Reservados. </span>
     </div>
     <script src="//cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
 </footer>
