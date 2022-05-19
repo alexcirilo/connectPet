@@ -32,6 +32,15 @@ $(document).ready(function() {
     $('#consulta_vacina').DataTable();
 } );
 
+$(document).ready(function() {
+    $('#consulta_pet').DataTable();
+} );
+
+$(document).ready(function() {
+    $('#consulta_tutor').DataTable();
+} );
+
+
 function limpa_formulário_cep() {
 	//Limpa valores do formulário de cep.
 	document.getElementById('rua').value = ("");

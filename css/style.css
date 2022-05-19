@@ -30,6 +30,13 @@ body{
     padding: 10px 10px 20px 10px;
     
 }
+.consulta_vacinacao{
+    padding: 10px;
+    border: 2px solid #000;
+    border-radius: 10px ;
+    padding-bottom: 20px;
+    background-color: rgba(113, 243, 113, 0.6);
+}
 
 .tutor_pet{
     padding: 10px;
@@ -71,4 +78,7 @@ body{
 }
 li{
     list-style: none;
+}
+h2{
+    text-align: center;
 }

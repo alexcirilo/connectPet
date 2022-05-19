@@ -52,14 +52,17 @@ switch ($pagina) {
     case 'consulta_pet':
         include __DIR__ . "/paginas/consultas/consulta_pet_view.php";
         break;
-    case 'consulta_vacinacao':
+    case 'con_vacinacao':
         include __DIR__ . "/paginas/consultas/consulta_vacinacao_view.php";
         break;
     case 'edit_vacina':
-        include __DIR__. "/paginas/edit/edit_vacina_view.php";
+        include __DIR__ . "/paginas/edit/edit_vacina_view.php";
         break;
     case 'consulta_vacina':
-        include __DIR__. "/paginas/consultas/consulta_vacina_view.php";
+        include __DIR__ . "/paginas/consultas/consulta_vacina_view.php";
+        break;
+    case 'edit_pet':
+        include __DIR__ . "/paginas/edit/edit_pet_view.php";
         break;
     default:
         include __DIR__ . "/paginas/login.php";

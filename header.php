@@ -57,7 +57,7 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Consulta</a>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="?pagina=consulta_vacinacao">Consulta Vacinação</a>
+                                    <a class="dropdown-item" href="?pagina=con_vacinacao">Consulta Vacinação</a>
                                     <a class="dropdown-item" href="?pagina=consulta_tutor">Consulta Tutor</a>
                                     <a class="dropdown-item" href="?pagina=consulta_pet">Consulta Pet</a>
                                     <a class="dropdown-item" href="?pagina=consulta_vacina">Consulta Vacina</a>
