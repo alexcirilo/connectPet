@@ -12,13 +12,13 @@ $nome_arquivo = md5($_FILES['arquivo']['name'] . rand(1, 999));
 $novo_nome = $nome_arquivo . '.' . pathinfo($_FILES['arquivo']['name'], PATHINFO_EXTENSION);
 $local = $_FILES['arquivo']['tmp_name'];
 
-$diretorio = '../imagens/pet/';
+$diretorio = '../../imagens/pet/';
 
 // verifica se o diretório existe
 if(is_dir($diretorio)){
     $dir_imagem = $diretorio . $novo_nome;    
 }else{
-    mkdir('../imagens/pet/');
+    mkdir('../../imagens/pet/');
     $dir_imagem = $diretorio . $novo_nome;
 }
 
