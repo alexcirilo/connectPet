@@ -17,11 +17,12 @@ $row = $consulta->fetch_assoc();
 ?>
 <h1>Editar Pet: <?= $row['nome_pet'] ?></h1>
 
-<form action="controller/cad_pet.php" method="post" id="cad_pet" enctype="multipart/form-data">
+<form action="controller/edit/edit_pet.php" method="post" id="cad_pet" enctype="multipart/form-data">
     <div class="tutor_pet">
         <input class="form-control col-md-2" type="hidden" name="id_pet" value="<?= $row['id_pet'] ?>">
         <div class="container">
             <div class="form-group">
+            	<input type="text" name="id_tutor" value="<?=$row['id_tutor']?>">
                 <label>CPF:</label>
                 <input class="form-control" autofocus type="text" name="cpf" id="cpf" value="<?= $row['cpf'] ?>" disabled>
             </div>

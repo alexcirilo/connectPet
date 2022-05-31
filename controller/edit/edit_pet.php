@@ -1,12 +1,12 @@
 <?php
 session_start();
-require __DIR__ . "/../connection/conexao.php";
+include __DIR__ . "/../../connection/conexao.php";
 
 /*Referente ao form */
+$id = filter_input(INPUT_POST, 'id_pet', FILTER_SANITIZE_NUMBER_INT);
 $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 $status = 'a';
-$data = date('Y-m-d');
-
+$data = date('y-m-d');
 /* Referente a imagem */
 $nome_arquivo = md5($_FILES['arquivo']['name'] . rand(1, 999));
 $novo_nome = $nome_arquivo . '.' . pathinfo($_FILES['arquivo']['name'], PATHINFO_EXTENSION);
@@ -22,16 +22,13 @@ if(is_dir($diretorio)){
     $dir_imagem = $diretorio . $novo_nome;
 }
 
-//query para buscar o id conforme o cpf do tutor
-$query  = "SELECT * from tutor where cpf = '{$dados['cpf']}'";
-$consulta = mysqli_query($connection,$query);
-$linha = mysqli_fetch_array($consulta);
 
-$id_tutor = $linha['id_tutor'];
 
-//cadastro do pet
-if (isset($_POST['cadastrar'])) {
-    $query = "update pet set nome_pet,especie,raca,data_nascimento,pelagem,sexo,castrado,microchip,local_implantacao,status,dt_status,id_tutor";
+//editar pet
+if ($_POST['cadastrar']) {
+    $query = "update pet set nome_pet = ?,especie = ?,raca = ?,data_nascimento = ?,pelagem = ?,
+    sexo = ?,castrado = ?,microchip = ?,local_implantacao = ?,
+    status = ?,dt_status = ?,id_tutor = ? where id_pet = {$dados['id_pet']}";
         
     $stmt = $connection->prepare($query);
 
@@ -49,7 +46,7 @@ if (isset($_POST['cadastrar'])) {
         $dados['local_implantacao'],
         $status,
         $data,
-        $id_tutor
+        $dados['id_tutor']
     );
 
 
@@ -80,10 +77,11 @@ if (isset($_POST['cadastrar'])) {
     $connection->close();
 
     //redirecionamento para área principal
-    header("Location: /connectpet/?pagina=home");
+    header("Location: /?pagina=home");
     $_SESSION['msg'] = "<div class='alert alert-success' role='alert'>{$dados['nome_pet']}, cadastrado com Sucesso! </div>";
 
 }else{
-    header("Location: /connectpet/?pagina=cad_pet");
+    header("Location: /pagina=cad_pet");
     $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Não foi possível cadastrar o Pet </div>";
 }
+
