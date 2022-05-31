@@ -25,7 +25,7 @@ if(is_dir($diretorio)){
 
 
 //editar pet
-if ($_POST['cadastrar']) {
+if ($_POST['salvar']) {
     $query = "update pet set nome_pet = ?,especie = ?,raca = ?,data_nascimento = ?,pelagem = ?,
     sexo = ?,castrado = ?,microchip = ?,local_implantacao = ?,
     status = ?,dt_status = ?,id_tutor = ? where id_pet = {$dados['id_pet']}";

@@ -22,7 +22,7 @@ $row = $consulta->fetch_assoc();
         <input class="form-control col-md-2" type="hidden" name="id_pet" value="<?= $row['id_pet'] ?>">
         <div class="container">
             <div class="form-group">
-            	<input type="text" name="id_tutor" value="<?=$row['id_tutor']?>">
+            	<input type="hidden" name="id_tutor" value="<?=$row['id_tutor']?>">
                 <label>CPF:</label>
                 <input class="form-control" autofocus type="text" name="cpf" id="cpf" value="<?= $row['cpf'] ?>" disabled>
             </div>
@@ -134,7 +134,7 @@ $row = $consulta->fetch_assoc();
         </div>
         <hr />
         <div class="container">
-            <input class="btn btn-success" type="submit" value="Cadastrar" name="cadastrar">
+            <input class="btn btn-success" type="submit" value="salvar" name="salvar">
             <a href="?pagina=consulta_pet" class="btn btn-primary">Voltar</a>
         </div>
     </div>
