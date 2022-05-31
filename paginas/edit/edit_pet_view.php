@@ -17,7 +17,7 @@ $row = $consulta->fetch_assoc();
 ?>
 <h1>Editar Pet: <?= $row['nome_pet'] ?></h1>
 
-<form action="controller/edit/edit_pet.php" method="post" id="cad_pet" enctype="multipart/form-data">
+<form action="controller/edit/edit_pet.php" method="post" id="edit_pet" enctype="multipart/form-data">
     <div class="tutor_pet">
         <input class="form-control col-md-2" type="hidden" name="id_pet" value="<?= $row['id_pet'] ?>">
         <div class="container">

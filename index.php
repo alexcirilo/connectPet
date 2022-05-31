@@ -58,6 +58,9 @@ switch ($pagina) {
     case 'edit_vacina':
         include __DIR__ . "/paginas/edit/edit_vacina_view.php";
         break;
+    case 'edit_tutor':
+        include __DIR__ . "/paginas/edit/edit_tutor_view.php";
+        break;
     case 'consulta_vacina':
         include __DIR__ . "/paginas/consultas/consulta_vacina_view.php";
         break;
