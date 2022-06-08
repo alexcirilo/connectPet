@@ -5,11 +5,7 @@ include __DIR__ . "/../../functions/verifica_login.php";
 verifica_login();
 
 ?>
-<<<<<<< HEAD
 <h2>Consulta de Tutor</h2>
-=======
-<h2>Consulta de Pet's</h2>
->>>>>>> be808ea89dfa91cb951c953eeec165fd81bc2fc2
 <hr>
 <table id="consulta_pet" class="table table-hover">
     <thead class="table-dark">

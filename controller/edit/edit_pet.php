@@ -51,37 +51,31 @@ if ($_POST['salvar']) {
 
 
     $stmt->execute();
-// busca do id do pet conforme o nome para mover e salvar a imagem do pet
-    $sql = "select p.id_pet, p.nome_pet from pet p where p.nome_pet = '{$dados['nome_pet']}'";
-    $consulta = $connection->query($sql);
-    
-    $row = $consulta->fetch_array();
 
     $move = move_uploaded_file($local, $dir_imagem);
     if($move) {
-        $query = "INSERT INTO foto_pet (nome_imagem,diretorio,id_pet) VALUES (?,?,?)";
+        $query = "update foto_pet set nome_imagem = ?, diretorio= ? where id_pet = $id";
         $stmt = $connection->prepare($query);
 
 
         $stmt->bind_param(
-            "ssi",
+            "ss",
             $novo_nome,
             $dir_imagem,
-            $row['id_pet']
+            
         );
-
         $stmt->execute();
     }
-    
+   
     $stmt->close();
     $connection->close();
 
-    //redirecionamento para área principal
-    header("Location: /?pagina=home");
-    $_SESSION['msg'] = "<div class='alert alert-success' role='alert'>{$dados['nome_pet']}, cadastrado com Sucesso! </div>";
+    //redirecionamento para área de consulta
+    header("Location: /?pagina=consulta_pet");
+    $_SESSION['msg'] = "<div class='alert alert-success' role='alert'>{$dados['nome_pet']}, alterado com Sucesso! </div>";
 
 }else{
-    header("Location: /pagina=cad_pet");
-    $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Não foi possível cadastrar o Pet </div>";
+    header("Location: /pagina=edit_pet");
+    $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Não foi possível editar o Pet </div>";
 }
 
