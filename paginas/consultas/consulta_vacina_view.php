@@ -5,9 +5,10 @@ include __DIR__ . "/../../functions/verifica_login.php";
 verifica_login();
 
 ?>
-
+<h2>Consulta de Vacinas</h2>
+<hr>
 <table id="consulta_vacina" class="display">
-    <thead>
+    <thead class="table-dark">
         <tr>
             <th>Código</th>
             <th>Descricao</th>

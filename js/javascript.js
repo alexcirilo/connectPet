@@ -39,6 +39,9 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('#consulta_tutor').DataTable();
 } );
+$(document).ready(function() {
+    $('#consulta_usuarios').DataTable();
+} );
 
 
 function limpa_formulário_cep() {

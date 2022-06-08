@@ -25,9 +25,6 @@ switch ($pagina) {
     case 'cad_usuario':
         include __DIR__ . "/paginas/cadastros/cad_usuario_view.php";
         break;
-    case 'cad_usuario_logado':
-        include __DIR__ . "/paginas/cadastros/cad_usuario_logado_view.php";
-        break;
     case 'esqueci_senha':
         include __DIR__ . "/paginas/cadastros/esqueci_senha_view.php";
         break;
@@ -46,6 +43,9 @@ switch ($pagina) {
     case 'cad_vacina':
         include __DIR__ . "/paginas/cadastros/cad_vacina_view.php";
         break;
+    case 'cad_usuario_logado':
+        include __DIR__ . "/paginas/cadastros/cad_usuario_logado_view.php";
+        break;
     case 'consulta_tutor':
         include __DIR__ . "/paginas/consultas/consulta_tutor_view.php";
         break;
@@ -55,8 +55,17 @@ switch ($pagina) {
     case 'con_vacinacao':
         include __DIR__ . "/paginas/consultas/consulta_vacinacao_view.php";
         break;
+    case 'consulta_usuarios':
+        include __DIR__ . "/paginas/consultas/consultar_usuarios_view.php";
+        break;
     case 'edit_vacina':
         include __DIR__ . "/paginas/edit/edit_vacina_view.php";
+        break;
+    case 'edit_tutor':
+        include __DIR__ . "/paginas/edit/edit_tutor_view.php";
+        break;
+    case 'edit_usuario':
+        include __DIR__ . "/paginas/edit/edit_usuario_view.php";
         break;
     case 'consulta_vacina':
         include __DIR__ . "/paginas/consultas/consulta_vacina_view.php";

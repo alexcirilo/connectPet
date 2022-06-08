@@ -6,7 +6,7 @@ body{
     flex-direction: column;
     text-align: center;
 }
-#login, #cad_usuario {
+#login, #cad_usuario, #cad_usuario_logado {
  
     border-radius: 10px ;
     margin-left: auto;
