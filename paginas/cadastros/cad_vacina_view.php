@@ -4,9 +4,11 @@ include __DIR__ . "/../../functions/verifica_login.php";
 verifica_login();
 ?>
 <h2>Cadastro vacina</h2>
+
+
 <form action="controller/cad_vacina.php" method="post" id="cad_vacina">
-    <div class="container" style="border: 1px solid">
-        <div class="form-group">
+    <div class="container bg-info" style="border: 1px solid; border-radius: 5px;">
+        <div class="form-group ">
             
         </div>
         <div class="form-group">

@@ -8,8 +8,8 @@ verifica_login();
 
 
 <form action="controller/cad_pet.php" method="post" id="cad_pet" enctype="multipart/form-data">
-    <div class="tutor_pet">
-        <div class="container">
+    <div class="tutor_pet bg-info">
+        <div class="container bg-info">
             <div class="form-group">
                 <label>CPF:</label>
                 <input class="form-control" autofocus type="text" name="cpf" id="cpf">
@@ -20,7 +20,7 @@ verifica_login();
             </div>
             <br />
             <legend>Não possui tutor?
-                <a class="btn btn-primary" href="?pagina=cad_tutor">Novo Tutor</a>
+                <a class="btn btn-success" href="?pagina=cad_tutor">Novo Tutor</a>
             </legend>
         </div>
 
