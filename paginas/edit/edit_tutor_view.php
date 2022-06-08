@@ -12,13 +12,8 @@ $consulta = $connection->query($query);
 $row = $consulta->fetch_assoc();
 
 ?>
-<<<<<<< HEAD
 <h2>Editar Tutor: <?= $row['nome'] ?></h2>
 <form action="controller/edit/edit_tutor.php" method="post" id="edit_tutor">
-=======
-<h2>Cadastro de Tutor</h2>
-<form action="controller/cad_tutor.php" method="post" id="edit_tutor">
->>>>>>> be808ea89dfa91cb951c953eeec165fd81bc2fc2
     <div class="container" style="border: 1px solid">
         <div class="form-group">
         <input class="form-control col-md-2" type="hidden" name="id_tutor" value="<?= $row['id_tutor'] ?>">
@@ -77,11 +72,7 @@ $row = $consulta->fetch_assoc();
         <br>
     </div>
     <div>
-<<<<<<< HEAD
         <input type="submit" class="btn btn-success" value="Salvar" name="salvar">
-=======
-        <input type="submit" class="btn btn-success" value="Salvar" name="cadastrar">
->>>>>>> be808ea89dfa91cb951c953eeec165fd81bc2fc2
     </div>
 
 </form>
