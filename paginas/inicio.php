@@ -23,7 +23,7 @@ verifica_login();
 
                 <a href="?pagina=cad_tutor"> <input class="img-thumbnail" type="image" src="imagens/cadPacientes.png" name="cadastro_paciente" alt="Cadastro Tutor"></a>
                 <a href="?pagina=cad_pet"> <input type="image" class="img-thumbnail" width="60" height="60" src="imagens/cad_pet.ico" name="cadastro_medico"></a>
-
+                <a href="pdf.php" target="_blank">Imprimir</a>
             </div>
         </div>
     </section>
