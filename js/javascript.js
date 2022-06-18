@@ -27,6 +27,19 @@ $(function () {
 
 	});
 });
+$(function () {
+	//Pesquisar os pets sem refresh na página.
+	$("#nome_pet").keyup(function () {
+
+		var busca = $("#nome_pet").val();
+
+		$.post('controller/busca_pet.php', { busca: busca }, function (data) {
+			//$("#tutor").html(data);
+			document.getElementById('pet').value = (data)
+		});
+
+	});
+});
 
 $(document).ready(function() {
     $('#consulta_vacina').DataTable();

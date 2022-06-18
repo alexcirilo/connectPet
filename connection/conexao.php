@@ -8,7 +8,7 @@ $database = "heroku_41029b0e9a222e3";
 /*
 $host= "localhost";
 $user = "root";
-$pwd = "";
+$pwd = "Qwer@1234";
 $database = "connect_pet";
 */
 /**

@@ -37,9 +37,10 @@ switch ($pagina) {
     case 'cad_pet':
         include __DIR__ . "/paginas/cadastros/cad_pet_view.php";
         break;
-    case 'cad_vacinacao':
+    /*case 'cad_vacinacao':
         include __DIR__ . "/paginas/cadastros/cad_vacinacao_view.php";
         break;
+    */
     case 'cad_vacina':
         include __DIR__ . "/paginas/cadastros/cad_vacina_view.php";
         break;
@@ -72,6 +73,9 @@ switch ($pagina) {
         break;
     case 'edit_pet':
         include __DIR__ . "/paginas/edit/edit_pet_view.php";
+        break;
+    case 'vacinar':
+        include __DIR__ . "/paginas/vacinar_view.php";
         break;
     default:
         include __DIR__ . "/paginas/login.php";

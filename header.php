@@ -50,7 +50,8 @@
                                     <a class="dropdown-item" href="?pagina=cad_tutor">Tutor</a>
                                     <a class="dropdown-item" href="?pagina=cad_pet">Pet</a>
                                     <a class="dropdown-item" href="?pagina=cad_vacina">Vacina</a>
-                                    <a class="dropdown-item" href="?pagina=cad_vacinacao">Vacinação</a>
+                                    <!--<a class="dropdown-item" href="?pagina=cad_vacinacao">Vacinação</a> -->
+                                    <a class="dropdown-item" href="?pagina=vacinar">Vacinar</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
@@ -65,8 +66,8 @@
                             </li>
                         </ul>
                     </div>
+                    <p style="text-align: right; color: white;" id="p" style="color:white"> <?= $_SESSION['login'] ?> | <a href="controller/sair.php"> <img src="/imagens/sair.png" alt="Sair" title="Sair"></a></p>
                 </div>
-                <p id="p" style="color:white">usuario: <?= $_SESSION['login'] ?> | <a href="controller/sair.php"> Sair</a></p>
             </nav>
         <?php
         }
