@@ -35,7 +35,7 @@
         if ($pagina !== 'login' && $pagina !== 'esqueci_senha' && $pagina !== 'cad_usuario') {
         ?>
             <nav class=" navbar navbar-expand-lg navbar-dark bg-dark">
-                <a class="nav-link mx-auto" href="?pagina=home"><img src="imagens/pet.ico" width="60px" height="60px"></a>
+                <a class="nav-link mx-auto" href="?pagina=home"><img src="imagens/pet.ico" width="80px" height="80px"></a>
                 <div class="col-md-6">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -73,4 +73,3 @@
         }
         ?>
     </header>
-    <hr />

@@ -40,13 +40,31 @@ $(function () {
 
 	});
 });
+$(function () {
+	//Pesquisar os pets sem refresh na página.
+	$("#tutor").keyup(function () {
+
+		var busca = $("#tutor").val();
+
+		$.post('controller/busca_tutor_pet.php', { busca: busca }, function (data) {
+			$("#tabela").html(data);
+			//document.getElementById('pet').value = (data)
+		});
+
+	});
+});
 
 $(document).ready(function() {
     $('#consulta_vacina').DataTable();
 } );
 
+
 $(document).ready(function() {
     $('#consulta_pet').DataTable();
+} );
+
+$(document).ready(function() {
+    $('#tutorPet').DataTable();
 } );
 
 $(document).ready(function() {

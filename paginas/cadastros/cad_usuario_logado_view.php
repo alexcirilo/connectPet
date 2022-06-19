@@ -77,11 +77,11 @@ verifica_login();
     </div>
     <div class="container">
         <label>
-            E-mail:
-            <input class="form-control" type="email" name="email">
+            E-mail
         </label>
+            <input class="form-control" type="email" name="email">
     </div>
-    <div class="container" style="text-align: center;">
+    <div class="container" style="text-align: center; margin-top: 10px;">
         <input class="btn btn-success" type="submit" value="Cadastrar" name="cadastrar">
         <a href="/?pagina=consulta_usuarios" class="btn btn-secondary">Voltar</a>
     </div>

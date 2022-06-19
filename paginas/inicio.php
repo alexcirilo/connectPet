@@ -11,7 +11,7 @@ verifica_login();
 
 ?>
 <div class="container-fluid text-md-center" id="home">
-    <h1>Olá <?= $_SESSION['login'] ?>, Bem vindo ao ConnectPet</h1>
+    <h2>Olá <?= $_SESSION['login'] ?>, Bem vindo ao ConnectPet</h2>
     <hr>
 
     <section class="container">
@@ -56,6 +56,7 @@ verifica_login();
                 </div>
             </div>
         </div>
+        <a href="?pagina=tutor_pet">Relatorio Tutor PET</a>
     </section>
 
 </div>
