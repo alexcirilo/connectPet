@@ -68,6 +68,10 @@ $(document).ready(function() {
 } );
 
 $(document).ready(function() {
+    $('#pets_vacinados').DataTable();
+} );
+
+$(document).ready(function() {
     $('#consulta_tutor').DataTable();
 } );
 $(document).ready(function() {

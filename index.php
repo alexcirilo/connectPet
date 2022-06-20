@@ -60,7 +60,7 @@ switch ($pagina) {
         include __DIR__ . "/paginas/consultas/consultar_usuarios_view.php";
         break;
     case 'tutor_pet':
-        include __DIR__ . "/paginas/consultas/consulta_tutor_pet_view.php";
+        include __DIR__ . "/paginas/relatorios/tutor_pet_view.php";
         break;
     case 'edit_vacina':
         include __DIR__ . "/paginas/edit/edit_vacina_view.php";
@@ -79,6 +79,9 @@ switch ($pagina) {
         break;
     case 'vacinar':
         include __DIR__ . "/paginas/vacinar_view.php";
+        break;
+    case 'pets_vacinados':
+        include __DIR__ . "/paginas/relatorios/pets_vacinados_view.php";
         break;
     default:
         include __DIR__ . "/paginas/login.php";

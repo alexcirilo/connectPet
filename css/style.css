@@ -1,6 +1,6 @@
 html {
     height: 100%;
-
+    min-height: 100%;
 }
 
 body {
@@ -9,7 +9,6 @@ body {
     justify-content: space-between;
     flex-direction: column;
     min-height: 100%;
-
 }
 
 #cad_usuario,
@@ -93,6 +92,7 @@ body {
     color: aliceblue;
     padding: 20px;
     flex-shrink: 0;
+    margin-top: auto;
 }
 
 

@@ -42,4 +42,5 @@ verifica_login();
 <div class="container" style="text-align: center;">
     <a class="btn btn-secondary" href="?pagina=cad_vacina">Nova Vacina</a>
     <a class="btn btn-secondary" href="?pagina=home">Voltar</a>
+    <a class="btn btn-secondary" target="_blank" href="controller/relatorios/estoque_vacina.php">Gerar Relatório</a>
 </div>

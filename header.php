@@ -64,6 +64,13 @@
                                     <a class="dropdown-item" href="?pagina=consulta_usuarios">Consulta Usuário</a>
                                 </div>
                             </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Relatórios</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="?pagina=tutor_pet">Tutor x Pet</a>
+                                    <a class="dropdown-item" href="?pagina=pets_vacinados">Total Pets Vacinados</a>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                     <p style="text-align: right; color: white;" id="p" style="color:white"> <?= $_SESSION['login'] ?> | <a href="controller/sair.php"> <img src="/imagens/sair.png" alt="Sair" title="Sair"></a></p>
@@ -73,3 +80,4 @@
         }
         ?>
     </header>
+    <br>
