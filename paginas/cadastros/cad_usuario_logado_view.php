@@ -54,8 +54,8 @@ verifica_login();
                     <div class="col-auto-my-2">
                         <label>Função:</label>
                         <select class="custom-select mr-sm-2" name="funcao">
+                            <option value="">Selecione</option>
                             <?php while ($linha = $consulta->fetch_assoc()) { ?>
-                                <option value="">Selecione</option>
                                 <option value="<?= $linha['id_funcao'] ?>"><?= $linha['descricao'] ?></option>
                             <?php } ?>
                         </select>

@@ -32,52 +32,91 @@
             $pagina = 'login';
         }
 
-        if ($pagina !== 'login' && $pagina !== 'esqueci_senha' && $pagina !== 'cad_usuario') {
-        ?>
-            <nav class=" navbar navbar-expand-lg navbar-dark bg-dark">
-                <a class="nav-link mx-auto" href="?pagina=home"><img src="imagens/pet.ico" width="80px" height="80px"></a>
-                <div class="col-md-6">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                        <ul class="navbar-nav mx-auto">
-                            <li class="nav-item"><a class="navbar-brand" href="?pagina=home">Home</a></li>
 
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cadastro</a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="?pagina=cad_tutor">Tutor</a>
-                                    <a class="dropdown-item" href="?pagina=cad_pet">Pet</a>
-                                    <a class="dropdown-item" href="?pagina=cad_vacina">Vacina</a>
-                                    <!--<a class="dropdown-item" href="?pagina=cad_vacinacao">Vacinação</a> -->
-                                    <a class="dropdown-item" href="?pagina=vacinar">Vacinar</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Consulta</a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="?pagina=consulta_tutor">Consulta Tutor</a>
-                                    <a class="dropdown-item" href="?pagina=consulta_pet">Consulta Pet</a>
-                                    <a class="dropdown-item" href="?pagina=con_vacinacao">Consulta Vacinação</a>
-                                    <a class="dropdown-item" href="?pagina=consulta_vacina">Consulta Vacina</a>
-                                    <a class="dropdown-item" href="?pagina=consulta_usuarios">Consulta Usuário</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Relatórios</a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="?pagina=tutor_pet">Tutor x Pet</a>
-                                    <a class="dropdown-item" href="?pagina=pets_vacinados">Total Pets Vacinados</a>
-                                </div>
-                            </li>
-                        </ul>
+        if (isset($_SESSION['login'])) {
+            require __DIR__ . '/connection/conexao.php';
+
+            $sql = "select id_funcao from usuarios where login = '{$_SESSION['login']}'";
+
+            $consulta = $connection->query($sql);
+            $row = $consulta->fetch_assoc();
+
+            if ($pagina !== 'login' && $pagina !== 'esqueci_senha' && $pagina !== 'cad_usuario') {
+        ?>
+                <nav class=" navbar navbar-expand-lg navbar-dark bg-dark">
+                    <a class="nav-link mx-auto" href="?pagina=home"><img src="imagens/pet.ico" width="80px" height="80px"></a>
+                    <div class="col-md-6">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                            <ul class="navbar-nav mx-auto">
+                                <li class="nav-item"><a class="navbar-brand" href="?pagina=home">Home</a></li>
+                                <?php if ($row['id_funcao'] == 1) { ?>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cadastro</a>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="?pagina=cad_tutor">Tutor</a>
+                                            <a class="dropdown-item" href="?pagina=cad_pet">Pet</a>
+                                            <a class="dropdown-item" href="?pagina=cad_vacina">Vacina</a>
+                                            <!--<a class="dropdown-item" href="?pagina=cad_vacinacao">Vacinação</a> -->
+                                            <a class="dropdown-item" href="?pagina=vacinar">Vacinar</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Consulta</a>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="?pagina=consulta_tutor">Consulta Tutor</a>
+                                            <a class="dropdown-item" href="?pagina=consulta_pet">Consulta Pet</a>
+                                            <a class="dropdown-item" href="?pagina=con_vacinacao">Consulta Vacinação</a>
+                                            <a class="dropdown-item" href="?pagina=consulta_vacina">Consulta Vacina</a>
+                                            <a class="dropdown-item" href="?pagina=consulta_usuarios">Consulta Usuário</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Relatórios</a>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="?pagina=tutor_pet">Tutor x Pet</a>
+                                            <a class="dropdown-item" href="?pagina=pets_vacinados">Total Pets Vacinados</a>
+                                        </div>
+                                    </li>
+                                <?php } else if ($row['id_funcao'] == 2) { ?>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cadastro</a>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="?pagina=cad_tutor">Tutor</a>
+                                            <a class="dropdown-item" href="?pagina=cad_pet">Pet</a>
+                                            <a class="dropdown-item" href="?pagina=cad_vacina">Vacina</a>
+                                            <!--<a class="dropdown-item" href="?pagina=cad_vacinacao">Vacinação</a> -->
+                                            <a class="dropdown-item" href="?pagina=vacinar">Vacinar</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Consulta</a>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="?pagina=consulta_tutor">Consulta Tutor</a>
+                                            <a class="dropdown-item" href="?pagina=consulta_pet">Consulta Pet</a>
+                                            <a class="dropdown-item" href="?pagina=con_vacinacao">Consulta Vacinação</a>
+                                            <a class="dropdown-item" href="?pagina=consulta_vacina">Consulta Vacina</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Relatórios</a>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="?pagina=tutor_pet">Tutor x Pet</a>
+                                            <a class="dropdown-item" href="?pagina=pets_vacinados">Total Pets Vacinados</a>
+                                        </div>
+                                    </li>
+                            <?php }
+                            } ?>
+                            </ul>
+                        </div>
                     </div>
                     <p style="text-align: right; color: white;" id="p" style="color:white"> <?= $_SESSION['login'] ?> | <a href="controller/sair.php"> <img src="/imagens/sair.png" alt="Sair" title="Sair"></a></p>
-                </div>
-            </nav>
-        <?php
+                </nav>
+            <?php
+
         }
-        ?>
+            ?>
     </header>
     <br>

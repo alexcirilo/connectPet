@@ -3,13 +3,14 @@ require __DIR__ . "/../../connection/conexao.php";
 
 
 if ($_POST['relatorio']) {
-    $tutor = filter_input(INPUT_POST, 'tutor', FILTER_SANITIZE_STRING);
+    $tutor = filter_input(INPUT_POST, 'cpf', FILTER_SANITIZE_STRING);
 
     $sql = "select p.id_pet, p.nome_pet, p.raca, p.data_nascimento from pet p inner join tutor t on 
-    p.id_pet = t.id_tutor 
-    where t.nome = '{$tutor}'";
+    p.id_tutor = t.id_tutor 
+    where t.cpf = '{$tutor}'";
 
     $consulta = $connection->query($sql);
+    $diretorio = '../../imagens/tutor.jpg';
     
         $html = "
             <h2 style= 'text-align: center;'>Relatório de Pets por Tutor</h2>
@@ -27,11 +28,11 @@ if ($_POST['relatorio']) {
                         <td>{$row['nome_pet']}</td>
                         <td>{$row['raca']}</td>";
             $html .= "<td>" . date('d/m/Y', strtotime($row['data_nascimento'])) . "</td>
-                    </tr>
-                </tbody>
+                    </tr>";
+                }
+                $html .="</tbody>
 
                 </table>";
-    }
 }
 
 
@@ -40,9 +41,12 @@ if ($_POST['relatorio']) {
 require __DIR__. "/../../vendor/autoload.php";
 
 use Dompdf\Dompdf;
+use Dompdf\Options;
 
 // instantiate and use the dompdf class
-$dompdf = new Dompdf();
+$options = new Options();
+$options->set('isRemoteEnabled', true);
+$dompdf = new Dompdf($options);
 $dompdf->loadHtml($html);
 
 // (Optional) Setup the paper size and orientation
@@ -52,4 +56,5 @@ $dompdf->setPaper('A4', 'landscape');
 $dompdf->render();
 
 // Output the generated PDF to Browser
-$dompdf->stream();
+$dompdf->stream('tutor_pet.pdf',array('Attachment' =>false));
+

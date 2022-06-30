@@ -1,7 +1,7 @@
 <?php
 require __DIR__ . "/../../functions/busca_funcao.php";
 ?>
-<form action="/connectpet/controller/cad_usuario.php" method="post" id="cad_usuario">
+<form action="controller/cad_usuario.php" method="post" id="cad_usuario">
     <div class="row">
         <div class="col-6">
             <div class="container">
@@ -19,7 +19,7 @@ require __DIR__ . "/../../functions/busca_funcao.php";
             <div class="container">
                 <label>
                     CPF:
-                    <input class="form-control" autofocus type="text" name="cpf" placeholder="000.000.000-00" required>
+                    <input class="form-control" autofocus type="text" name="cpf" id="cpf" placeholder="000.000.000-00" required>
                 </label>
             </div>
             <div class="container">
@@ -49,8 +49,8 @@ require __DIR__ . "/../../functions/busca_funcao.php";
                     <div class="col-auto-my-2">
                         <label>Função:</label>
                         <select class="custom-select mr-sm-2" name="funcao">
+                            <option value="">Selecione</option>
                             <?php while ($linha = $consulta->fetch_assoc()) { ?>
-                                <option value="">Selecione</option>
                                 <option value="<?= $linha['id_funcao'] ?>"><?= $linha['descricao'] ?></option>
                             <?php } ?>
                         </select>

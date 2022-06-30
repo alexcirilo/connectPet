@@ -41,10 +41,10 @@ $(function () {
 	});
 });
 $(function () {
-	//Pesquisar os pets sem refresh na página.
-	$("#tutor").keyup(function () {
+	//Pesquisar os pets pelo cpf do tutor sem refresh na página.
+	$("#cpf").keyup(function () {
 
-		var busca = $("#tutor").val();
+		var busca = $("#cpf").val();
 
 		$.post('controller/busca_tutor_pet.php', { busca: busca }, function (data) {
 			$("#tabela").html(data);
