@@ -1,154 +1,121 @@
 <?php
 include __DIR__ . "/../../functions/verifica_login.php";
+include __DIR__ . "/../../controller/busca_vacinador.php";
 
 verifica_login();
 ?>
-<style type="text/css">
-    .campo {
-        background-color: #212F3D;
-        padding: 5px 5px;
-        margin-left: 5px;
-        display: inline-flex;
-        width: 300px;
-        border-radius: 5px;
-        box-shadow: 3px 3px 3px black;
-        flex-wrap: nowrap;
-    }
-
-    .cabecalho {
-        font-size: 1.5em;
-        text-align: center;
-    }
-
-    .rotulo {
-        width: 85px;
-        margin: 20px 5px 0px 5px;
 
 
-    }
-
-    #container1 h1 {
-        text-shadow: 5px 5px 5px black;
-
-    }
-
-    .container1 {
-        padding: 20px;
-        display: inline-flex;
-        border: 1px solid;
-        border-radius: 5px;
-    }
 
 
- 
-    
 </style>
 
 <link rel="stylesheet" href="css/cad_vacinacao.css">
 
-<div class="bg-info">
-    <form id="cad_vacinacao">
+<form id="cad_vacinacao">
+    <div class="bg-info">
         <div class="container">
-            <h1 class="cabecalho">Registro de Vacinação</h1>
+            <h1 style="text-align: center;">Registro de Vacinação</h1>
             <div>
-                <div class="col">
+                <div class="form-group" style="text-align: center;">
                     <label>Registro:
-                        <input type="text" class="form-control" id="registro" autofocus required>
+                        <input type="number" class="form-control" id="registro" autofocus disabled>
                     </label>
                     <label>Tutor:
-                        <input type="text" class="form-control" id="tutor" style="display: inline-block;">
+                        <input type="text" class="form-control" id="cpf" name="cpf" style="display: inline-block;">
                     </label>
-                    <label>Vacinador:
-                        <input type="text" class="form-control" id="vacinador" style="display: inline-block;"></label>
                     <label>Data vacinação:
-                        <input type="text" class="form-control" id="dt_vacinacao" style=" display: inline-block;"></label>
+                        <input type="date" class="form-control" id="dt_vacinacao" style=" display: inline-block;"></label>
+                    <div class="col-auto-my-1" style="text-align: center;">
+                        <label>Vacinador:
+                            <select class="custom-select mr-sm-2" id="vacinador" name="vacinador">
+                                <option value="">Selecione</option>
+                                <?php while ($row = $consulta->fetch_assoc()) { ?>
+                                    <option value="<?= $row['id_usuario'] ?>"><?= $row['nome'] ?></option>
+                                <?php } ?>
+                            </select>
+                        </label>
+                    </div>
                 </div>
             </div>
             <hr>
-            <div class="col">
-                <label for="nome">Nome:</label>
-                <input id="nome" disabled class="form-control" value="...">
+            <div class="form-group">
+                <label>
+                    Nome:
+                </label>
+                <input type="text" autofocus disabled name="tutor" id="tutor" class="form-control col-md-8">
             </div>
-            <br>
-            <div class="col">
-                <label for="tutor" class="rotulo">Logradouro:</label>
-                <input type="text" id="logradouro" class="form-control" value="..." disabled>
+            <div class="form-group">
+                <label>
+                    CEP:
+                    <input name="cep" type="text" id="cep" size="10" maxlength="9" required class="form-control" onblur="pesquisacep(this.value);" /></label>
+                </label>
             </div>
-            <div class="row" style="padding:15px;">
-                <div class="col-5">
-                    <label for="complemento" class="rotulo">Comp. :</label>
-                    <input type="text" id="comp" class="form-control col-md-10" value="..." disabled>
-                </div>
-                <div class="col-4">
-                    <label for="numero" class="rotulo">Número:</label>
-                    <input type="text" id="numero" class="form-control col-md-2" disabled value="...">
-                </div>
-
-                <div class="col-md-3">
-                     <label for="_cep" class="rotulo">Cep :</label>
-                     <span id="_cep" class="form-control col-md-10">...</span>
-                </div>
-                
-                 <div class="col-4">
-                    <label for="bairro" class="rotulo">Bairro:</label>
-                    <span id="bairro" class="form-control col-md-10">...</span>
-                </div>
-
-                <div class="col-4">
-                    <label for="uf" class="rotulo">UF:</label>
-                    <span id="uf" class="form-control col-md-10">...</span>
-                </div>
-                <div class="col-5">
-                    <label for="celular" class="rotulo">Celular:</label>
-                    <span id="celular" class="form-control col-md-10">...</span>
-                </div>
-
-                <div class="col-4">
-                    <label for="email" class="rotulo">Email:</label>
-                    <span id="Email" class="form-control col-md-10">...</span>
-                </div>
-
+            <div class="form-group">
+                <label>
+                    Logradouro:
+                    <input name="logradouro" type="text" id="rua" size="60" class="form-control" required />
+                </label>
+                <label>
+                    Número:
+                    <input type="text" name="numero" id="numero" class="form-control" required>
+                </label>
             </div>
-        
+            <div class="form-group">
+                <label>Complemento:</label>
+                <input type="text" name="complemento" id="complemento" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Bairro:
+                    <input name="bairro" type="text" id="bairro" size="40" class="form-control" required />
+                </label>
+                <label>Cidade:
+                    <input name="cidade" type="text" id="cidade" size="40" class="form-control" required />
+                </label>
+                <label>UF:
+                    <input name="uf" type="text" id="uf" class="form-control" size="4" required />
+                </label>
+            </div>
+            <div class="form-group">
+                <label>
+                    E-mail:
+                    <input type="email" name="email" id="email" class="form-control" required>
+                </label>
+                <label>
+                    Telefone:
+                    <input type="tel" name="telefone" id="telefone" class="form-control " required>
+                </label>
+            </div>
         </div>
         <br>
-        <table class="table table-sm">
-            <thead>
-                <tr>
-                    <th scope="col">Id. pet</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Raça</th>
-                    <th scope="col">Cod.Vacina</th>
-                    <th scope="col">descrição</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>imperador</td>
-                    <td>Yorkshire</td>
-                    <td>pf-344937</td>
-                    <td>...</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>thor</td>
-                    <td>Poodle</td>
-                    <td>rv-234570</td>
-                    <td>...</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Buldogue</td>
-                    <td>Buldogue</td>
-                    <td>rv-23456</td>
-                    <td>...</td>
-                </tr>
-            </tbody>
-        </table>
+    </div>
+    <hr>
+    <h2>Pets</h2>
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Id. pet</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Raça</th>
+                <th scope="col">Cod.Vacina</th>
+                <th scope="col">Descrição</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>imperador</td>
+                <td>Yorkshire</td>
+                <td>pf-344937</td>
+                <td>...</td>
+            </tr>
 
-        <div class="d-flex justify-content-center" style="margin:20px 0px;">
-            <button type="submit" class="btn btn-primary">Enviar Certificado</button></button>
-        </div>
-    </form>
-</div>
+        </tbody>
+    </table>
+
+    <div class="d-flex justify-content-center" style="margin:20px 0px;">
+        <button type="submit" class="btn btn-primary">Enviar Certificado</button></button>
+    </div>
+    <br>
+    </div>
+</form>

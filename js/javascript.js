@@ -27,6 +27,30 @@ $(function () {
 
 	});
 });
+
+$(function () {
+	//Pesquisar os cursos sem refresh na página.
+	$("#vacinador").keyup(function () {
+
+		var busca = $("#vacinador").val();
+
+		$.post('controller/busca_vacinador.php', { busca: busca }, function (data) {
+			//$("#tutor").html(data);
+			document.getElementById('tutor').value = (data)
+			document.getElementById('cep').value = (data)
+			document.getElementById('rua').value = (data)
+			document.getElementById('numero').value = (data)
+			document.getElementById('complemento').value = (data)
+			document.getElementById('bairro').value = (data)
+			document.getElementById('cidade').value = (data)
+			document.getElementById('uf').value = (data)
+			document.getElementById('email').value = (data)
+			document.getElementById('telefone').value = (data)
+		});
+
+	});
+});
+
 $(function () {
 	//Pesquisar os pets sem refresh na página.
 	$("#nome_pet").keyup(function () {

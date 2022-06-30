@@ -107,7 +107,9 @@
                                             <a class="dropdown-item" href="?pagina=pets_vacinados">Total Pets Vacinados</a>
                                         </div>
                                     </li>
-                            <?php }
+                            <?php } else if($row['id_funcao'] == 3){
+                                    echo "Usuario";
+                            }
                             } ?>
                             </ul>
                         </div>
