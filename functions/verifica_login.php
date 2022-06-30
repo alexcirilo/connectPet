@@ -14,12 +14,12 @@ function verifica_usuario()
 {
     require __DIR__ . '/../connection/conexao.php';
 
-    $sql = "select id_funcao from usuarios where login = '{$_SESSION['login']}'";
+    $sql = "select perfil from usuarios where login = '{$_SESSION['login']}'";
 
     $consulta = $connection->query($sql);
     $row = $consulta->fetch_assoc();
 
-    if ($row['id_funcao'] == 1) {
+    if ($row['perfil'] == 1) {
         echo "
         <div class='row'>
 
@@ -62,7 +62,7 @@ function verifica_usuario()
                 </div>
             </div>
         </div>";
-    } else if ($row['id_funcao'] == 2) {
+    } else if ($row['perfil'] == 2) {
         echo "
         <div class='row'>
 
@@ -97,7 +97,7 @@ function verifica_usuario()
                     </div>
             </div>
         </div>";
-    } else {
+    } else if($row['perfil'] == 3 ){
         echo "";
     }
 }
