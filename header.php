@@ -68,7 +68,7 @@
                                         <div class="dropdown-menu">
                                             <a class="dropdown-item" href="?pagina=consulta_tutor">Consulta Tutor</a>
                                             <a class="dropdown-item" href="?pagina=consulta_pet">Consulta Pet</a>
-                                            <a class="dropdown-item" href="?pagina=con_vacinacao">Consulta Vacinação</a>
+                                            <!--<a class="dropdown-item" href="?pagina=con_vacinacao">Consulta Vacinação</a> -->
                                             <a class="dropdown-item" href="?pagina=consulta_vacina">Consulta Vacina</a>
                                             <a class="dropdown-item" href="?pagina=consulta_usuarios">Consulta Usuário</a>
                                         </div>
