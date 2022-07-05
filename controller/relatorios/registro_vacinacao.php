@@ -4,6 +4,7 @@ require __DIR__ . "/../../connection/conexao.php";
 
 if ($_POST['relatorio']) {
     $tutor = filter_input(INPUT_POST, 'cpf_tutor', FILTER_SANITIZE_STRING);
+    $dados = filter_input_array(INPUT_POST,FILTER_DEFAULT);
 
     $sql = "select t.nome as 'tutor', e.logradouro, e.numero as 'numero endereco', u.nome as 'vacinador',
     p.nome_pet, p.especie, p.sexo, p.raca, p.microchip, 
@@ -19,7 +20,7 @@ if ($_POST['relatorio']) {
     v.id_vacina = va.id_vacina 
     inner join usuarios u on
     va.id_usuario = u.id_usuario 
-    where t.cpf = '{$tutor}'";
+    where t.cpf = '{$tutor}' and p.nome_pet = {$dados['Nome do Pet']}";
 
     $consulta = $connection->query($sql);
     $row = $consulta->fetch_assoc();
