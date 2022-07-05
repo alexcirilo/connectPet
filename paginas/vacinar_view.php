@@ -24,7 +24,7 @@ verifica_login();
                     <select class="custom-select mr-sm-2" id="vacinador" name="vacinador">
                         <option value="">Selecione</option>
                         <?php while ($linha = $consulta->fetch_assoc()) { ?>
-                            <option value="<?= $linha['id_funcao'] ?>"><?= $linha['nome'] ?></option>
+                            <option value="<?= $linha['id_usuario'] ?>"><?= $linha['nome'] ?></option>
                         <?php } ?>
                     </select>
                 </label>
