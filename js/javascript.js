@@ -27,29 +27,77 @@ $(function () {
 
 	});
 });
+/*
+$(document).ready(function (){
+	$("input['name='cpf_tutor']").blur(function () {
+		var $tutor =  $("input[name='tutor']");
+		var $cep =  $("input[name='cep']");
+		var $rua =  $("input[name='rua']");
+		var $numero =  $("input[name='numero']");
+		var $complemento =  $("input[name='complemento']");
+		var $bairro =  $("input[name='bairro']");
+		var $cidade =  $("input[name='cidade']");
+		var $uf =  $("input[name='uf']");
+		var $email =  $("input[name='email']");
+		var $telefone =  $("input[name='telefone']");
 
-$(function () {
+		var cpf = $(this).val();
+
+		$.getJSON('controller/busca_tutor_vac.php',{cpf},
+			function(retorno){
+				$tutor.val(retorno.tutor);
+				$cep.val(retorno.cep);
+				$rua.val(retorno.rua);
+				$numero.val(retorno.numero);
+				$complemento.val(retorno.complemento);
+				$bairro.val(retorno.bairro);
+				$cidade.val(retorno.cidade);
+				$uf.val(retorno.uf);
+				$email.val(retorno.email);
+				$telefone.val(retorno.telefone);
+			}
+		);
+	});
+})
+*/
+
+
+
+$(document).ready(function() {
 	//Pesquisar os cursos sem refresh na página.
-	$("#vacinador").keyup(function () {
+	$("input[name='cpf_tutor']").keyup(function () {
+		
+		var $tutor =  $("input[name='tutor']");
+		var $cep =  $("input[name='cep']");
+		var $rua =  $("input[name='rua']");
+		var $numero =  $("input[name='numero']");
+		var $complemento =  $("input[name='complemento']");
+		var $bairro =  $("input[name='bairro']");
+		var $cidade =  $("input[name='cidade']");
+		var $uf =  $("input[name='uf']");
+		var $email =  $("input[name='email']");
+		var $telefone =  $("input[name='telefone']");
+		var busca = $(this).val();
 
-		var busca = $("#vacinador").val();
-
-		$.post('controller/busca_vacinador.php', { busca: busca }, function (data) {
+		$.getJSON('controller/busca_tutor_vac.php', { busca }, function (data) {
 			//$("#tutor").html(data);
-			document.getElementById('tutor').value = (data)
-			document.getElementById('cep').value = (data)
-			document.getElementById('rua').value = (data)
-			document.getElementById('numero').value = (data)
-			document.getElementById('complemento').value = (data)
-			document.getElementById('bairro').value = (data)
-			document.getElementById('cidade').value = (data)
-			document.getElementById('uf').value = (data)
-			document.getElementById('email').value = (data)
-			document.getElementById('telefone').value = (data)
+			$tutor.val(data.tutor);
+			
+			$cep.val(data.cep);
+			$rua.val(data.rua);
+			$numero.val(data.numero);
+			$complemento.val(data.complemento);
+			$bairro.val(data.bairro);
+			$cidade.val(data.cidade);
+			$uf.val(data.uf);
+			$email.val(data.email);
+			$telefone.val(data.telefone);
 		});
 
 	});
 });
+
+
 
 $(function () {
 	//Pesquisar os pets sem refresh na página.
@@ -64,6 +112,17 @@ $(function () {
 
 	});
 });
+
+$(function(){
+	$("#cpf_tutor").keyup(function (){
+		var busca = $('#cpf_tutor').val();
+
+		$.post('controller/consultas/busca_pet_tutor.php',{ busca: busca }, function(data){
+			$("#table_pet").html(data);
+		})
+	});
+});
+
 $(function () {
 	//Pesquisar os pets pelo cpf do tutor sem refresh na página.
 	$("#cpf").keyup(function () {
@@ -172,6 +231,7 @@ $(document).ready(function(){
 	$("#cpf").mask("000.000.000-00");
 	$("#telefone").mask("(99)99999-9999");
 	$("#cep").mask("00000-000");
+	$("#cpf_tutor").mask("000.000.000-00");
 });
 
 function oculta_campo(val){

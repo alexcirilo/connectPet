@@ -5,37 +5,16 @@ include __DIR__ . "/../../controller/busca_vacinador.php";
 verifica_login();
 ?>
 
-
-
-
-</style>
-
-<link rel="stylesheet" href="css/cad_vacinacao.css">
-
-<form id="cad_vacinacao">
+<form id="reg_vacinacao" method="POST" action="controller/relatorios/registro_vacinacao.php">
     <div class="bg-info">
         <div class="container">
             <h1 style="text-align: center;">Registro de Vacinação</h1>
             <div>
                 <div class="form-group" style="text-align: center;">
-                    <label>Registro:
-                        <input type="number" class="form-control" id="registro" autofocus disabled>
-                    </label>
                     <label>Tutor:
-                        <input type="text" class="form-control" id="cpf" name="cpf" style="display: inline-block;">
+                        <input placeholder="consulta tutor pelo CPF" type="text" class="form-control" autofocus id="cpf_tutor" name="cpf_tutor" style="display: inline-block;">
+                        <small>Consulta feita pelo CPF</small>
                     </label>
-                    <label>Data vacinação:
-                        <input type="date" class="form-control" id="dt_vacinacao" style=" display: inline-block;"></label>
-                    <div class="col-auto-my-1" style="text-align: center;">
-                        <label>Vacinador:
-                            <select class="custom-select mr-sm-2" id="vacinador" name="vacinador">
-                                <option value="">Selecione</option>
-                                <?php while ($row = $consulta->fetch_assoc()) { ?>
-                                    <option value="<?= $row['id_usuario'] ?>"><?= $row['nome'] ?></option>
-                                <?php } ?>
-                            </select>
-                        </label>
-                    </div>
                 </div>
             </div>
             <hr>
@@ -54,7 +33,7 @@ verifica_login();
             <div class="form-group">
                 <label>
                     Logradouro:
-                    <input name="logradouro" type="text" id="rua" size="60" class="form-control" required />
+                    <input name="rua" type="text" id="rua" size="60" class="form-control" required />
                 </label>
                 <label>
                     Número:
@@ -90,31 +69,13 @@ verifica_login();
         <br>
     </div>
     <hr>
-    <h2>Pets</h2>
-    <table class="table table-bordered table-hover">
-        <thead class="thead-dark">
-            <tr>
-                <th scope="col">Id. pet</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Raça</th>
-                <th scope="col">Cod.Vacina</th>
-                <th scope="col">Descrição</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>imperador</td>
-                <td>Yorkshire</td>
-                <td>pf-344937</td>
-                <td>...</td>
-            </tr>
 
-        </tbody>
-    </table>
+    <h2>Pets</h2>
+    <table id="table_pet" class="table table-bordered table-hover"></table>
+        
 
     <div class="d-flex justify-content-center" style="margin:20px 0px;">
-        <button type="submit" class="btn btn-primary">Enviar Certificado</button></button>
+        
     </div>
     <br>
     </div>

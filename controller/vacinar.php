@@ -19,16 +19,17 @@ if (isset($_POST['vacinar'])) {
     $id_vacina = $linha['id_vacina'];
     $codigo = $linha['codigo'];
 
-    $sql = "INSERT INTO vacinacao (id_pet,data_vacina,id_vacina,codigo) values (?,?,?,?)";
+    $sql = "INSERT INTO vacinacao (id_pet,data_vacina,id_vacina,codigo, id_usuario) values (?,?,?,?,?)";
 
     $stmt = $connection->prepare($sql);
 
     $stmt->bind_param(
-        "isis",
+        "isisi",
         $id_pet,
         $dados['data_vacina'],
         $id_vacina,
-        $codigo
+        $codigo,
+        $dados['vacinador']
     );
     $stmt->execute();
 

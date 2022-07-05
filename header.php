@@ -71,6 +71,7 @@
                                             <!--<a class="dropdown-item" href="?pagina=con_vacinacao">Consulta Vacinação</a> -->
                                             <a class="dropdown-item" href="?pagina=consulta_vacina">Consulta Vacina</a>
                                             <a class="dropdown-item" href="?pagina=consulta_usuarios">Consulta Usuário</a>
+                                            <a class="dropdown-item" href="?pagina=reg_vacinacao">Registro Vacinação</a>
                                         </div>
                                     </li>
                                     <li class="nav-item dropdown">
@@ -98,6 +99,7 @@
                                             <a class="dropdown-item" href="?pagina=consulta_pet">Consulta Pet</a>
                                             <a class="dropdown-item" href="?pagina=con_vacinacao">Consulta Vacinação</a>
                                             <a class="dropdown-item" href="?pagina=consulta_vacina">Consulta Vacina</a>
+                                            <a class="dropdown-item" href="?pagina=reg_vacinacao">Registro Vacinação</a>
                                         </div>
                                     </li>
                                     <li class="nav-item dropdown">
