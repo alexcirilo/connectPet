@@ -22,7 +22,11 @@ if (isset($_POST['vacinar'])) {
     $sql = "INSERT INTO vacinacao (id_pet,data_vacina,id_vacina,codigo, id_usuario) values (?,?,?,?,?)";
 
     $stmt = $connection->prepare($sql);
-    var_dump($sql);
+    var_dump($id_pet);
+    var_dump($codigo);
+    var_dump($linha['data_vacina']);
+    var_dump($id_vacina);
+    var_dump($dados['vacinador']);
 /*
     $stmt->bind_param(
         "isisi",
