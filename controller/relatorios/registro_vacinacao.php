@@ -29,7 +29,7 @@ $tutor = filter_input(INPUT_GET, 'cpf', FILTER_DEFAULT);
     $consulta = $connection->query($sql);
 
     var_dump($sql);
-    $row = $consulta->fetch_assoc();
+    while($row = $consulta->fetch_assoc()){
 
 
     $diretorio = '../../imagens/tutor.jpg';
@@ -97,7 +97,7 @@ $tutor = filter_input(INPUT_GET, 'cpf', FILTER_DEFAULT);
         </div>
     </div>
                 ";
-
+    }
 // somewhere early in your project's loading, require the Composer autoloader
 // see: http://getcomposer.org/doc/00-intro.md
 require __DIR__ . "/../../vendor/autoload.php";
