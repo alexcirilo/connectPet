@@ -24,7 +24,7 @@ if (isset($_POST['vacinar'])) {
     $stmt = $connection->prepare($sql);
     var_dump($id_pet);
     var_dump($codigo);
-    var_dump($linha['data_vacina']);
+    var_dump($dados['data_vacina']);
     var_dump($id_vacina);
     var_dump($dados['vacinador']);
 /*
