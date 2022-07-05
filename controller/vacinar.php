@@ -19,7 +19,7 @@ if (isset($_POST['vacinar'])) {
     $id_vacina = $linha['id_vacina'];
     $codigo = $linha['codigo'];
 
-    $sql = "INSERT INTO vacinacao (id_pet,data_vacina,id_vacina,codigo, id_usuario) values (?,?,?,?,?)";
+    /*$sql = "INSERT INTO vacinacao (id_pet,data_vacina, id_vacina, codigo, id_usuario) values (?,?,?,?,?)";
 
     $stmt = $connection->prepare($sql);
     
@@ -32,7 +32,7 @@ if (isset($_POST['vacinar'])) {
         $dados['vacinador']
     );
     $stmt->execute();
-
+*/
     $sql = "update vacina set quantidade = quantidade -1 where id_vacina = ?";
 
     $stmt = $connection->prepare($sql);
