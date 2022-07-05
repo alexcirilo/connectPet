@@ -11,7 +11,9 @@ va.id_pet = p.id_pet inner join vacina v on
 va.id_vacina = v.id_vacina 
 where t.cpf = '{$tutor}'";
 
-$consulta = $connection->query($sql); ?>
+$consulta = $connection->query($sql); 
+
+?>
 
 <table id="table_pet" class="table table-bordered table-hover" id="tabela">
     <thead class="thead-dark">
@@ -25,15 +27,18 @@ $consulta = $connection->query($sql); ?>
         </tr>
     </thead>
     <tbody style="text-align: center;">
+        
         <?php while ($row = $consulta->fetch_assoc()) { ?>
             <tr>
+                <input type="text" name='<?=$row['id_pet']?>'>
                 <td scope="row"><?= $row['id_pet'] ?></td>
                 <td scope="row"><?= $row['Nome do Pet'] ?></td>
                 <td scope="row"><?php if($row['raca'] == 'raca'){
                                                 echo "Raça";} ?></td>
                 <td scope="row"><?= $row['codigo vacina'] ?></td>
                 <td scope="row"><?= $row['Vacina'] ?></td>
-                <td><input type="submit" value="Certificado" name="relatorio" class="btn btn-primary"></td>
+                <!--<td><input type="submit" value="Certificado" name="relatorio" class="btn btn-primary"></td> -->
+                <td><a href="?pagina=reg_vac&id=<?= $row['id_pet'] ?>&cpf=<?=$tutor?>">Editar</a></td>
             </tr>
         <?php } ?>
     </tbody>

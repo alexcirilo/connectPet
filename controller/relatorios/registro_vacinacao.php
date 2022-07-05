@@ -1,11 +1,15 @@
+<div id='reg_vac'>
+
+</div>
 <?php
 require __DIR__ . "/../../connection/conexao.php";
 
+$id = filter_input(INPUT_GET, 'id', FILTER_DEFAULT);
+$tutor = filter_input(INPUT_GET, 'cpf', FILTER_DEFAULT);
 
-if ($_POST['relatorio']) {
-    $tutor = filter_input(INPUT_POST, 'cpf_tutor', FILTER_SANITIZE_STRING);
-    $dados = filter_input_array(INPUT_POST,FILTER_DEFAULT);
+    var_dump($id);
 
+    
     $sql = "select t.nome as 'tutor', e.logradouro, e.numero as 'numero endereco', u.nome as 'vacinador',
     p.nome_pet, p.especie, p.sexo, p.raca, p.microchip, 
     v.descricao, v.laboratorio, v.lote, va.data_vacina
@@ -20,9 +24,11 @@ if ($_POST['relatorio']) {
     v.id_vacina = va.id_vacina 
     inner join usuarios u on
     va.id_usuario = u.id_usuario 
-    where t.cpf = '{$tutor}' and p.nome_pet = {$dados['Nome do Pet']}";
+    where t.cpf = '{$tutor}' and p.id_pet = {$id}";
 
     $consulta = $connection->query($sql);
+
+    var_dump($sql);
     $row = $consulta->fetch_assoc();
 
 
@@ -91,7 +97,7 @@ if ($_POST['relatorio']) {
         </div>
     </div>
                 ";
-}
+
 // somewhere early in your project's loading, require the Composer autoloader
 // see: http://getcomposer.org/doc/00-intro.md
 require __DIR__ . "/../../vendor/autoload.php";
@@ -113,3 +119,4 @@ $dompdf->render();
 
 // Output the generated PDF to Browser
 $dompdf->stream('registro_vacinacao.pdf', array('Attachment' => false));
+

@@ -82,6 +82,9 @@ switch ($pagina) {
     case 'pets_vacinados':
         include __DIR__ . "/paginas/relatorios/pets_vacinados_view.php";
         break;
+    case 'reg_vac':
+        include __DIR__. "/controller/relatorios/registro_vacinacao.php";
+        break;
     default:
         include __DIR__ . "/paginas/login.php";
         break;
