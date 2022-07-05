@@ -22,12 +22,7 @@ if (isset($_POST['vacinar'])) {
     $sql = "INSERT INTO vacinacao (id_pet,data_vacina,id_vacina,codigo, id_usuario) values (?,?,?,?,?)";
 
     $stmt = $connection->prepare($sql);
-    var_dump($id_pet);
-    var_dump($codigo);
-    var_dump($dados['data_vacina']);
-    var_dump($id_vacina);
-    var_dump($dados['vacinador']);
-/*
+    
     $stmt->bind_param(
         "isisi",
         $id_pet,
@@ -53,7 +48,7 @@ if (isset($_POST['vacinar'])) {
     $connection->close();
 
     //var_dump("pet: ". $id_pet, "vacina:".$linha['id_vacina'], "codigo vacina: ".$linha['codigo'], "Data: ".$dados['data_vacina']);
-*/
+
 } else {
     header("Location: /?pagina=vacinar");
     $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Não foi possível vacinar </div>";
