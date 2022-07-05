@@ -19,7 +19,7 @@ if (isset($_POST['vacinar'])) {
     $id_vacina = $linha['id_vacina'];
     $codigo = $linha['codigo'];
 
-    /*$sql = "INSERT INTO vacinacao (id_pet,data_vacina, id_vacina, codigo, id_usuario) values (?,?,?,?,?)";
+    $sql = "INSERT INTO vacinacao (id_pet,data_vacina, id_vacina, codigo, id_usuario) values (?,?,?,?,?)";
 
     $stmt = $connection->prepare($sql);
     
@@ -31,8 +31,13 @@ if (isset($_POST['vacinar'])) {
         $codigo,
         $dados['vacinador']
     );
-    $stmt->execute();
-*/
+    //$stmt->execute();
+    var_dump($id_pet);
+    var_dump($dados['data_vacina']);
+    var_dump($id_vacina);
+    var_dump($codigo);
+    var_dump($dados['vacinador']);
+/*
     $sql = "update vacina set quantidade = quantidade -1 where id_vacina = ?";
 
     $stmt = $connection->prepare($sql);
@@ -48,7 +53,7 @@ if (isset($_POST['vacinar'])) {
     $connection->close();
 
     //var_dump("pet: ". $id_pet, "vacina:".$linha['id_vacina'], "codigo vacina: ".$linha['codigo'], "Data: ".$dados['data_vacina']);
-
+*/
 } else {
     header("Location: /?pagina=vacinar");
     $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Não foi possível vacinar </div>";
