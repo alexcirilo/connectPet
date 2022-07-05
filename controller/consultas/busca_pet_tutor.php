@@ -30,7 +30,6 @@ $consulta = $connection->query($sql);
         
         <?php while ($row = $consulta->fetch_assoc()) { ?>
             <tr>
-                <input type="text" name='<?=$row['id_pet']?>'>
                 <td scope="row"><?= $row['id_pet'] ?></td>
                 <td scope="row"><?= $row['Nome do Pet'] ?></td>
                 <td scope="row"><?php if($row['raca'] == 'raca'){
