@@ -7,10 +7,10 @@ require __DIR__ . "/../../connection/conexao.php";
 $id = filter_input(INPUT_GET, 'id', FILTER_DEFAULT);
 $tutor = filter_input(INPUT_GET, 'cpf', FILTER_DEFAULT);
 
-    var_dump($id);
+//var_dump($id);
 
-    
-    $sql = "select t.nome as 'tutor', e.logradouro, e.numero as 'numero endereco', u.nome as 'vacinador',
+
+$sql = "select t.nome as 'tutor', e.logradouro, e.numero as 'numero endereco', u.nome as 'vacinador',
     p.nome_pet, p.especie, p.sexo, p.raca, p.microchip, 
     v.descricao, v.laboratorio, v.lote, va.data_vacina
     from tutor t 
@@ -26,10 +26,10 @@ $tutor = filter_input(INPUT_GET, 'cpf', FILTER_DEFAULT);
     va.id_usuario = u.id_usuario 
     where t.cpf = '{$tutor}' and p.id_pet = {$id}";
 
-    $consulta = $connection->query($sql);
+$consulta = $connection->query($sql);
 
-    var_dump($sql);
-    while($row = $consulta->fetch_assoc()){
+//var_dump($sql);
+while ($row = $consulta->fetch_assoc()) {
 
 
     $diretorio = '../../imagens/tutor.jpg';
@@ -96,12 +96,16 @@ $tutor = filter_input(INPUT_GET, 'cpf', FILTER_DEFAULT);
                 <span>Vacinador: {$row['vacinador']}</span>
         </div>
     </div>
+    <br>
+    <div class='row'>
+    <input type='button' class='btn btn-primary' value='Imprimir' onclick='window.print()' style='margin: 3px'>
+    <a href='?pagina=reg_vacinacao' style='margin: 3px'  class='btn btn-primary'>Voltar</a>
+    </div>
+    <br>
                 ";
-    }
-// somewhere early in your project's loading, require the Composer autoloader
-// see: http://getcomposer.org/doc/00-intro.md
-require __DIR__ . "/../../vendor/autoload.php";
-
+}
+echo $html;
+/*
 use Dompdf\Dompdf;
 use Dompdf\Options;
 
@@ -109,6 +113,7 @@ use Dompdf\Options;
 $options = new Options();
 $options->set('isRemoteEnabled', true);
 $dompdf = new Dompdf($options);
+$html = file_get_contents('registro_vacinacao.php');
 $dompdf->loadHtml($html);
 
 // (Optional) Setup the paper size and orientation
@@ -119,4 +124,4 @@ $dompdf->render();
 
 // Output the generated PDF to Browser
 $dompdf->stream('registro_vacinacao.pdf', array('Attachment' => false));
-
+*/

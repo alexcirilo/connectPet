@@ -75,7 +75,7 @@ verifica_login();
         
 
     <div class="d-flex justify-content-center" style="margin:20px 0px;">
-        
+    <a href='?pagina=home' style='margin: 3px'  class='btn btn-primary'>Voltar</a>
     </div>
     <br>
     </div>

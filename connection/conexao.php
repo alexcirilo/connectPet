@@ -1,16 +1,15 @@
 <?php
 
+/*
 $host= "us-cdbr-east-05.cleardb.net";
 $user = "b05a4271466144";
 $pwd = "76bbb149";
 $database = "heroku_41029b0e9a222e3";
-
-/*
+*/
 $host= "localhost";
 $user = "root";
 $pwd = "Qwer@1234";
 $database = "connect_pet";
-*/
 
 /**
  * heroku access:

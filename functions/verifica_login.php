@@ -98,6 +98,16 @@ function verifica_usuario()
             </div>
         </div>";
     } else if($row['perfil'] == 3 ){
-        echo "";
+        echo "<div class='row'>
+
+        <div class='col-md-12'>
+            <div class='row'>
+                <div class='container-fluid' style='text-align: center;'>
+                    <legend>Consulta</legend>
+                </div>
+                <div class='col-12'>
+                    <a href='?pagina=reg_vacinacao'> <input class='img-thumbnail' type='image' src='imagens/tutor.png' width='120' height='120' name='cadastro_tutor' alt='Cadastro Tutor' title='Cadastro Tutor'>
+                        <figcaption>Registro Vacinação</figcaption>
+                    </a>";
     }
 }

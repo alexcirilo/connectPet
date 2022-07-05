@@ -37,7 +37,7 @@ $consulta = $connection->query($sql);
                 <td scope="row"><?= $row['codigo vacina'] ?></td>
                 <td scope="row"><?= $row['Vacina'] ?></td>
                 <!--<td><input type="submit" value="Certificado" name="relatorio" class="btn btn-primary"></td> -->
-                <td><a href="?pagina=reg_vac&id=<?= $row['id_pet'] ?>&cpf=<?=$tutor?>">Editar</a></td>
+                <td><a href="?pagina=reg_vac&id=<?= $row['id_pet'] ?>&cpf=<?=$tutor?>" class="btn btn-primary">Gerar Carteira</a></td>
             </tr>
         <?php } ?>
     </tbody>
