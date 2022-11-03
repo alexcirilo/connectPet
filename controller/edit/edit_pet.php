@@ -54,7 +54,7 @@ if ($_POST['salvar']) {
 
     $move = move_uploaded_file($local, $dir_imagem);
     if($move) {
-        $query = "update foto_pet set nome_imagem = ?, diretorio= ? where id_pet = $id";
+        $query = "update foto_pet set nome_imagem = ?, diretorio= ? where id_pet = $id for update";
         $stmt = $connection->prepare($query);
 
 
