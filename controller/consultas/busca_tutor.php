@@ -2,6 +2,6 @@
 
 require __DIR__ . "/../../connection/conexao.php";
 
-$query = "select * from tutor";
+$query = "select * from tutor lock in share mode";
 
 $consulta = $connection->query($query);

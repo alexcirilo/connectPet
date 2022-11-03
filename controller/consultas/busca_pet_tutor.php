@@ -9,7 +9,7 @@ t.nome from pet p inner join tutor t on
 p.id_tutor = t.id_tutor inner join vacinacao va on
 va.id_pet = p.id_pet inner join vacina v on
 va.id_vacina = v.id_vacina 
-where t.cpf = '{$tutor}'";
+where t.cpf = '{$tutor}' lock in share mode";
 
 $consulta = $connection->query($sql); 
 
